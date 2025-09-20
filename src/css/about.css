@@ -1,0 +1,44 @@
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+    
+    * {
+      font-family: 'Inter', sans-serif;
+    }
+    
+    .gradient-bg {
+      background: linear-gradient(135deg, #f97316 0%, #ea580c 25%, #dc2626 50%, #b91c1c 75%, #0f766e 100%);
+    }
+    
+    /* Basic styles for the under development section */
+    .under-dev-container {
+      min-height: calc(100vh - 8rem); /* Adjust for nav and footer height */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      text-align: center;
+    }
+    
+    .under-dev-image {
+      max-width: 300px; /* Adjust image size as needed */
+      height: auto;
+      border-radius: 1rem; /* Optional rounded corners */
+      margin-bottom: 2rem;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+    
+    .under-dev-text {
+      font-size: 1.5rem; /* Adjust text size */
+      font-weight: 600;
+      color: #4b5563; /* Tailwind gray-600 */
+    }
+    
+    /* Ensure footer is pushed down */
+    .content-wrapper {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    main {
+      flex: 1;
+    }
