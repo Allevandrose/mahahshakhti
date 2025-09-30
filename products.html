@@ -1,745 +1,666 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Products - Mahashakti Kenya Limited</title>
-  <meta name="description" content="Explore our range of high-quality transformers and power solutions at Mahashakti Kenya Limited">
-  <meta name="keywords" content="transformers Kenya, power solutions, electrical equipment, transformer manufacturing Kenya">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products - Mahashakti Kenya Limited</title>
+    <meta
+      name="description"
+      content="Explore our range of high-quality transformers and power solutions at Mahashakti Kenya Limited"
+    />
+    <meta
+      name="keywords"
+      content="transformers Kenya, power solutions, electrical equipment, transformer manufacturing Kenya"
+    />
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="/src/images/logo.ico" />
-  
-  <link rel="stylesheet" href="src/css/products.css">
-  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- Splide CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-  <script src="https://cdn.tailwindcss.com"></script>
-  
-  <style>
-    /* Custom Splide styling */
-    .splide__arrow {
-      background: linear-gradient(135deg, #f97316 0%, #ea580c 50%, #dc2626 100%);
-      opacity: 0.9;
-      transition: all 0.3s ease;
-    }
-    .splide__arrow:hover {
-      opacity: 1;
-      transform: scale(1.1);
-    }
-    .splide__pagination__page {
-      background: #d1d5db;
-      transition: all 0.3s ease;
-    }
-    .splide__pagination__page.is-active {
-      background: linear-gradient(135deg, #f97316 0%, #ea580c 50%, #dc2626 100%);
-      transform: scale(1.3);
-    }
-    
-    /* Compact carousel cards */
-    .carousel-card {
-      height: 320px;
-      transition: all 0.3s ease;
-    }
-    .carousel-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-    }
-    
-    /* Power solutions grid animation */
-    .solution-card {
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    .solution-card:hover {
-      transform: translateY(-10px) scale(1.02);
-    }
-    .solution-icon {
-      transition: all 0.5s ease;
-    }
-    .solution-card:hover .solution-icon {
-      transform: rotate(360deg) scale(1.1);
-    }
-  </style>
-</head>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/src/images/logo.ico" />
 
-<body class="overflow-x-hidden bg-gray-50">
+    <link rel="stylesheet" href="src/css/products.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
 
-  <!-- Navigation Bar -->
-  <nav
-    x-data="{ scrolled: false, mobileMenuOpen: false, currentPage: 'products' }"
-    @scroll.window="scrolled = window.scrollY > 50"
-    class="fixed w-full z-50 transition-all duration-500"
-    :class="scrolled ? 'bg-white/95 backdrop-blur-xl shadow-2xl border-b border-orange-100' : 'bg-white/10 backdrop-blur-lg'"
-  >
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between h-20 items-center">
-        <!-- Logo Section -->
-        <div class="flex items-center group">
-          <div class="flex-shrink-0 flex items-center">
-            <div class="relative">
-              <div class="w-12 h-12 rounded-2xl gradient-bg flex items-center justify-center mr-3 group-hover:scale-110 transition-all duration-500 shadow-lg floating">
-                <div class="w-14 h-14 bg-white rounded-xl flex items-center justify-center shadow-inner">
-                  <img src="src/images/logo.jpg" alt="Mahashakti logo" class="w-10 h-10 rounded-full object-cover">
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      .gradient-bg {
+        background: linear-gradient(
+          135deg,
+          #f97316 0%,
+          #ea580c 50%,
+          #dc2626 100%
+        );
+      }
+
+      .product-card {
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .product-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      }
+
+      .slide-up {
+        animation: slideUp 0.8s ease-out forwards;
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      @keyframes slideUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .floating {
+        animation: float 3s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+    </style>
+  </head>
+
+  <body class="overflow-x-hidden bg-gray-50">
+    <!-- Navigation Bar -->
+    <nav
+      x-data="{ scrolled: false, mobileMenuOpen: false, currentPage: 'products' }"
+      @scroll.window="scrolled = window.scrollY > 50"
+      class="fixed w-full z-50 transition-all duration-500"
+      :class="scrolled ? 'bg-white/95 backdrop-blur-xl shadow-2xl border-b border-orange-100' : 'bg-white/10 backdrop-blur-lg'"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-20 items-center">
+          <!-- Logo Section -->
+          <div class="flex items-center group">
+            <div class="flex-shrink-0 flex items-center">
+              <div class="relative">
+                <div
+                  class="w-12 h-12 rounded-2xl gradient-bg flex items-center justify-center mr-3 group-hover:scale-110 transition-all duration-500 shadow-lg floating"
+                >
+                  <div
+                    class="w-14 h-14 bg-white rounded-xl flex items-center justify-center shadow-inner"
+                  >
+                    <img
+                      src="src/images/logo.jpg"
+                      alt="Mahashakti logo"
+                      class="w-10 h-10 rounded-full object-cover"
+                    />
+                  </div>
                 </div>
+                <div
+                  class="absolute -top-1 -right-1 w-4 h-4 gradient-bg rounded-full animate-pulse shadow-lg"
+                ></div>
               </div>
-              <div class="absolute -top-1 -right-1 w-4 h-4 gradient-bg rounded-full animate-pulse shadow-lg"></div>
-            </div>
-            <div>
-              <h1 class="text-xl font-bold transition-colors duration-300" 
-                  :class="scrolled ? 'text-gray-900' : 'text-white'">MAHASHAKTI</h1>
-              <p class="text-xs font-medium transition-colors duration-300" 
-                 :class="scrolled ? 'text-orange-600' : 'text-white/80'">KENYA LIMITED</p>
+              <div>
+                <h1
+                  class="text-xl font-bold transition-colors duration-300"
+                  :class="scrolled ? 'text-gray-900' : 'text-white'"
+                >
+                  MAHASHAKTI
+                </h1>
+                <p
+                  class="text-xs font-medium transition-colors duration-300"
+                  :class="scrolled ? 'text-orange-600' : 'text-white/80'"
+                >
+                  KENYA LIMITED
+                </p>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- Desktop Nav -->
-        <div class="hidden md:flex items-center space-x-2">
-          <a href="index.html"
-            :class="currentPage === 'home' ? 'bg-orange-100 text-orange-600 shadow-lg' : (scrolled ? 'text-gray-700 hover:text-orange-600 hover:bg-orange-50' : 'text-white hover:bg-white/20')"
-            class="px-6 py-3 text-sm font-medium transition-all duration-300 rounded-full"
+          <!-- Desktop Nav -->
+          <div class="hidden md:flex items-center space-x-2">
+            <a
+              href="index.html"
+              :class="currentPage === 'home' ? 'bg-orange-100 text-orange-600 shadow-lg' : (scrolled ? 'text-gray-700 hover:text-orange-600 hover:bg-orange-50' : 'text-white hover:bg-white/20')"
+              class="px-6 py-3 text-sm font-medium transition-all duration-300 rounded-full"
+            >
+              Home
+            </a>
+            <a
+              href="about.html"
+              :class="currentPage === 'about' ? 'bg-orange-100 text-orange-600 shadow-lg' : (scrolled ? 'text-gray-700 hover:text-orange-600 hover:bg-orange-50' : 'text-white hover:bg-white/20')"
+              class="px-6 py-3 text-sm font-medium transition-all duration-300 rounded-full"
+            >
+              About
+            </a>
+            <a
+              href="products.html"
+              :class="currentPage === 'products' ? 'bg-orange-100 text-orange-600 shadow-lg' : (scrolled ? 'text-gray-700 hover:text-orange-600 hover:bg-orange-50' : 'text-white hover:bg-white/20')"
+              class="px-6 py-3 text-sm font-medium transition-all duration-300 rounded-full"
+            >
+              Products
+            </a>
+            <a
+              href="contact.html"
+              :class="currentPage === 'contact' ? 'bg-orange-100 text-orange-600 shadow-lg' : (scrolled ? 'text-gray-700 hover:text-orange-600 hover:bg-orange-50' : 'text-white hover:bg-white/20')"
+              class="px-6 py-3 text-sm font-medium transition-all duration-300 rounded-full"
+            >
+              Contact
+            </a>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <div class="md:hidden flex items-center">
+            <button
+              @click="mobileMenuOpen = !mobileMenuOpen"
+              class="p-2 rounded-xl transition-all duration-300"
+              :class="scrolled ? 'text-gray-700 hover:bg-gray-100' : 'text-white hover:bg-white/20'"
+            >
+              <i
+                class="ri-menu-3-line text-2xl transition-transform duration-300"
+                x-show="!mobileMenuOpen"
+              ></i>
+              <i
+                class="ri-close-line text-2xl transition-transform duration-300"
+                x-show="mobileMenuOpen"
+              ></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Nav -->
+      <div
+        x-show="mobileMenuOpen"
+        x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-start="opacity-0 -translate-y-4"
+        x-transition:enter-end="opacity-100 translate-y-0"
+        x-transition:leave="transition ease-in duration-200"
+        x-transition:leave-start="opacity-100 translate-y-0"
+        x-transition:leave-end="opacity-0 -translate-y-4"
+        class="md:hidden bg-white/95 backdrop-blur-xl border-t border-orange-100/50"
+      >
+        <div class="px-4 py-6 space-y-2">
+          <a
+            href="index.html"
+            class="block w-full text-left px-4 py-3 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-orange-50 rounded-xl transition-all duration-300"
+            @click="mobileMenuOpen = false"
           >
             Home
           </a>
-          <a href="about.html"
-            :class="currentPage === 'about' ? 'bg-orange-100 text-orange-600 shadow-lg' : (scrolled ? 'text-gray-700 hover:text-orange-600 hover:bg-orange-50' : 'text-white hover:bg-white/20')"
-            class="px-6 py-3 text-sm font-medium transition-all duration-300 rounded-full"
+          <a
+            href="about.html"
+            class="block w-full text-left px-4 py-3 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-orange-50 rounded-xl transition-all duration-300"
+            @click="mobileMenuOpen = false"
           >
             About
           </a>
-          <a href="products.html"
-            :class="currentPage === 'products' ? 'bg-orange-100 text-orange-600 shadow-lg' : (scrolled ? 'text-gray-700 hover:text-orange-600 hover:bg-orange-50' : 'text-white hover:bg-white/20')"
-            class="px-6 py-3 text-sm font-medium transition-all duration-300 rounded-full"
+          <a
+            href="products.html"
+            class="block w-full text-left px-4 py-3 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-orange-50 rounded-xl transition-all duration-300"
+            @click="mobileMenuOpen = false"
           >
             Products
           </a>
-          <a href="contact.html"
-            :class="currentPage === 'contact' ? 'bg-orange-100 text-orange-600 shadow-lg' : (scrolled ? 'text-gray-700 hover:text-orange-600 hover:bg-orange-50' : 'text-white hover:bg-white/20')"
-            class="px-6 py-3 text-sm font-medium transition-all duration-300 rounded-full"
+          <a
+            href="contact.html"
+            class="block w-full text-left px-4 py-3 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-orange-50 rounded-xl transition-all duration-300"
+            @click="mobileMenuOpen = false"
           >
             Contact
           </a>
         </div>
-
-        <!-- Mobile Menu Button -->
-        <div class="md:hidden flex items-center">
-          <button
-            @click="mobileMenuOpen = !mobileMenuOpen"
-            class="p-2 rounded-xl transition-all duration-300"
-            :class="scrolled ? 'text-gray-700 hover:bg-gray-100' : 'text-white hover:bg-white/20'"
-          >
-            <i class="ri-menu-3-line text-2xl transition-transform duration-300" x-show="!mobileMenuOpen"></i>
-            <i class="ri-close-line text-2xl transition-transform duration-300" x-show="mobileMenuOpen"></i>
-          </button>
-        </div>
       </div>
-    </div>
+    </nav>
 
-    <!-- Mobile Nav -->
-    <div
-      x-show="mobileMenuOpen"
-      x-transition:enter="transition ease-out duration-300"
-      x-transition:enter-start="opacity-0 -translate-y-4"
-      x-transition:enter-end="opacity-100 translate-y-0"
-      x-transition:leave="transition ease-in duration-200"
-      x-transition:leave-start="opacity-100 translate-y-0"
-      x-transition:leave-end="opacity-0 -translate-y-4"
-      class="md:hidden bg-white/95 backdrop-blur-xl border-t border-orange-100/50"
+    <!-- Hero Section -->
+    <section
+      class="relative pt-24 pb-16 gradient-bg text-white overflow-hidden"
     >
-      <div class="px-4 py-6 space-y-2">
-        <a href="index.html"
-          class="block w-full text-left px-4 py-3 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-orange-50 rounded-xl transition-all duration-300"
-          @click="mobileMenuOpen = false"
-        >
-          Home
-        </a>
-        <a href="about.html"
-          class="block w-full text-left px-4 py-3 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-orange-50 rounded-xl transition-all duration-300"
-          @click="mobileMenuOpen = false"
-        >
-          About
-        </a>
-        <a href="products.html"
-          class="block w-full text-left px-4 py-3 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-orange-50 rounded-xl transition-all duration-300"
-          @click="mobileMenuOpen = false"
-        >
-          Products
-        </a>
-        <a href="contact.html"
-          class="block w-full text-left px-4 py-3 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-orange-50 rounded-xl transition-all duration-300"
-          @click="mobileMenuOpen = false"
-        >
-          Contact
-        </a>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Hero Section -->
-  <section class="relative pt-24 pb-16 gradient-bg text-white overflow-hidden">
-    <div class="absolute top-20 left-10 w-32 h-32 morphing-blob bg-yellow-400/20 floating blur-sm"></div>
-    <div class="absolute top-1/3 right-16 w-24 h-24 morphing-blob bg-orange-400/20 floating-delayed blur-sm"></div>
-    <div class="absolute bottom-32 left-1/4 w-20 h-20 morphing-blob bg-teal-400/20 floating blur-sm"></div>
-
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-      <div class="slide-up">
-        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
-          Our <span class="bg-gradient-to-r from-yellow-300 to-orange-400 bg-clip-text text-transparent">Products & Services</span>
-        </h1>
-        <p class="text-xl sm:text-2xl max-w-3xl mx-auto leading-relaxed text-white/90">
-          High-quality transformers and comprehensive maintenance services for Kenya's evolving power infrastructure
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Power Solutions Section - Enhanced -->
-  <section class="py-20 relative overflow-hidden bg-gradient-to-br from-gray-50 via-orange-50/30 to-teal-50/30">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="text-center mb-16 slide-up">
-        <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-          Power Solutions for <span class="bg-gradient-to-r from-orange-600 to-teal-600 bg-clip-text text-transparent">Every Need</span>
-        </h2>
-        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-          From standard distribution units to custom-engineered power systems — we deliver reliability, efficiency, and innovation.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Distribution -->
-        <div class="solution-card bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl">
-          <div class="w-16 h-16 gradient-bg rounded-2xl flex items-center justify-center mb-6 solution-icon">
-            <i class="fas fa-bolt text-white text-2xl"></i>
-          </div>
-          <h3 class="text-2xl font-bold text-gray-900 mb-3">Distribution Solutions</h3>
-          <p class="text-gray-600 mb-4">11kV & 33kV transformers designed for reliable power distribution across residential and commercial networks.</p>
-          <a href="#distribution" class="inline-flex items-center text-orange-600 font-semibold hover:text-orange-700">
-            Learn More <i class="fas fa-arrow-right ml-2"></i>
-          </a>
-        </div>
-
-        <!-- Power Transmission -->
-        <div class="solution-card bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl">
-          <div class="w-16 h-16 gradient-bg rounded-2xl flex items-center justify-center mb-6 solution-icon">
-            <i class="fas fa-tower-broadcast text-white text-2xl"></i>
-          </div>
-          <h3 class="text-2xl font-bold text-gray-900 mb-3">Power Transmission</h3>
-          <p class="text-gray-600 mb-4">High-capacity transformers up to 50 MVA, 132 kV for critical power transmission infrastructure.</p>
-          <a href="#power" class="inline-flex items-center text-orange-600 font-semibold hover:text-orange-700">
-            Learn More <i class="fas fa-arrow-right ml-2"></i>
-          </a>
-        </div>
-
-        <!-- Renewable Energy -->
-        <div class="solution-card bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl">
-          <div class="w-16 h-16 gradient-bg rounded-2xl flex items-center justify-center mb-6 solution-icon">
-            <i class="fas fa-solar-panel text-white text-2xl"></i>
-          </div>
-          <h3 class="text-2xl font-bold text-gray-900 mb-3">Renewable Energy</h3>
-          <p class="text-gray-600 mb-4">Specialized solar transformers optimized for photovoltaic farms and grid integration systems.</p>
-          <a href="#featured" class="inline-flex items-center text-orange-600 font-semibold hover:text-orange-700">
-            Learn More <i class="fas fa-arrow-right ml-2"></i>
-          </a>
-        </div>
-
-        <!-- Industrial Applications -->
-        <div class="solution-card bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl">
-          <div class="w-16 h-16 gradient-bg rounded-2xl flex items-center justify-center mb-6 solution-icon">
-            <i class="fas fa-industry text-white text-2xl"></i>
-          </div>
-          <h3 class="text-2xl font-bold text-gray-900 mb-3">Industrial Applications</h3>
-          <p class="text-gray-600 mb-4">Rectifier transformers for electroplating, chemical processing, and heavy industrial use.</p>
-          <a href="#featured" class="inline-flex items-center text-orange-600 font-semibold hover:text-orange-700">
-            Learn More <i class="fas fa-arrow-right ml-2"></i>
-          </a>
-        </div>
-
-        <!-- Safety-Critical -->
-        <div class="solution-card bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl">
-          <div class="w-16 h-16 gradient-bg rounded-2xl flex items-center justify-center mb-6 solution-icon">
-            <i class="fas fa-shield-halved text-white text-2xl"></i>
-          </div>
-          <h3 class="text-2xl font-bold text-gray-900 mb-3">Safety-Critical Spaces</h3>
-          <p class="text-gray-600 mb-4">Dry-type transformers for indoor installations, hospitals, data centers, and fire-sensitive areas.</p>
-          <a href="#featured" class="inline-flex items-center text-orange-600 font-semibold hover:text-orange-700">
-            Learn More <i class="fas fa-arrow-right ml-2"></i>
-          </a>
-        </div>
-
-        <!-- Custom Solutions -->
-        <div class="solution-card bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl">
-          <div class="w-16 h-16 gradient-bg rounded-2xl flex items-center justify-center mb-6 solution-icon">
-            <i class="fas fa-cogs text-white text-2xl"></i>
-          </div>
-          <h3 class="text-2xl font-bold text-gray-900 mb-3">Custom Engineering</h3>
-          <p class="text-gray-600 mb-4">Bespoke transformer designs tailored to your unique power requirements and specifications.</p>
-          <a href="contact.html" class="inline-flex items-center text-orange-600 font-semibold hover:text-orange-700">
-            Get Quote <i class="fas fa-arrow-right ml-2"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Featured Products Carousel - Improved -->
-  <section id="featured" class="py-20 bg-white relative overflow-hidden">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16 slide-up">
-        <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-          Featured <span class="bg-gradient-to-r from-teal-600 to-orange-600 bg-clip-text text-transparent">Products</span>
-        </h2>
-        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-          Explore our core transformer offerings — engineered for performance, durability, and compliance.
-        </p>
-      </div>
-
-      <!-- Splide Carousel -->
-      <div class="splide" id="featured-products-carousel">
-        <div class="splide__track">
-          <ul class="splide__list">
-            <!-- Distribution Transformer -->
-            <li class="splide__slide p-3">
-              <div class="carousel-card bg-gradient-to-br from-white to-orange-50/50 rounded-2xl p-6 shadow-lg border border-orange-100/50">
-                <div class="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center mb-4 mx-auto">
-                  <i class="fas fa-bolt text-white text-xl"></i>
-                </div>
-                <h3 class="text-xl font-bold text-gray-900 mb-3 text-center">Distribution Transformers</h3>
-                <ul class="space-y-2 text-sm text-gray-700">
-                  <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-0.5 mr-2 flex-shrink-0"></i> 11kV & 33kV voltage class</li>
-                  <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-0.5 mr-2 flex-shrink-0"></i> Single & Three Phase</li>
-                  <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-0.5 mr-2 flex-shrink-0"></i> Hermetically sealed oil type</li>
-                  <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-0.5 mr-2 flex-shrink-0"></i> Customizable per client needs</li>
-                </ul>
-              </div>
-            </li>
-
-            <!-- Power Transformers -->
-            <li class="splide__slide p-3">
-              <div class="carousel-card bg-gradient-to-br from-white to-teal-50/50 rounded-2xl p-6 shadow-lg border border-teal-100/50">
-                <div class="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center mb-4 mx-auto">
-                  <i class="fas fa-tower-broadcast text-white text-xl"></i>
-                </div>
-                <h3 class="text-xl font-bold text-gray-900 mb-3 text-center">Power Transformers</h3>
-                <ul class="space-y-2 text-sm text-gray-700">
-                  <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-0.5 mr-2 flex-shrink-0"></i> Up to 50 MVA, 132 kV</li>
-                  <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-0.5 mr-2 flex-shrink-0"></i> ONAN / ONAF cooling</li>
-                  <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-0.5 mr-2 flex-shrink-0"></i> IEC & ISO compliant</li>
-                  <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-0.5 mr-2 flex-shrink-0"></i> Full routine & type testing</li>
-                </ul>
-              </div>
-            </li>
-
-            <!-- Rectifier Transformers -->
-            <li class="splide__slide p-3">
-              <div class="carousel-card bg-gradient-to-br from-white to-orange-50/50 rounded-2xl p-6 shadow-lg border border-orange-100/50">
-                <div class="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center mb-4 mx-auto">
-                  <i class="fas fa-plug text-white text-xl"></i>
-                </div>
-                <h3 class="text-xl font-bold text-gray-900 mb-3 text-center">Rectifier Transformers</h3>
-                <ul class="space-y-2 text-sm text-gray-700">
-                  <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-0.5 mr-2 flex-shrink-0"></i> For electroplating & HVDC</li>
-                  <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-0.5 mr-2 flex-shrink-0"></i> Multi-winding design</li>
-                  <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-0.5 mr-2 flex-shrink-0"></i> Harmonic mitigation</li>
-                  <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-0.5 mr-2 flex-shrink-0"></i> Industrial-grade durability</li>
-                </ul>
-              </div>
-            </li>
-
-            <!-- Solar Transformers -->
-            <li class="splide__slide p-3">
-              <div class="carousel-card bg-gradient-to-br from-white to-teal-50/50 rounded-2xl p-6 shadow-lg border border-teal-100/50">
-                <div class="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center mb-4 mx-auto">
-                  <i class="fas fa-solar-panel text-white text-xl"></i>
-                </div>
-                <h3 class="text-xl font-bold text-gray-900 mb-3 text-center">Solar Transformers</h3>
-                <ul class="space-y-2 text-sm text-gray-700">
-                  <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-0.5 mr-2 flex-shrink-0"></i> Optimized for solar farms</li>
-                  <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-0.5 mr-2 flex-shrink-0"></i> Wide input voltage range</li>
-                  <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-0.5 mr-2 flex-shrink-0"></i> Grid code compliant</li>
-                  <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-0.5 mr-2 flex-shrink-0"></i> Low maintenance design</li>
-                </ul>
-              </div>
-            </li>
-
-            <!-- Dry Type Transformers -->
-            <li class="splide__slide p-3">
-              <div class="carousel-card bg-gradient-to-br from-white to-orange-50/50 rounded-2xl p-6 shadow-lg border border-orange-100/50">
-                <div class="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center mb-4 mx-auto">
-                  <i class="fas fa-wind text-white text-xl"></i>
-                </div>
-                <h3 class="text-xl font-bold text-gray-900 mb-3 text-center">Dry Type Transformers</h3>
-                <ul class="space-y-2 text-sm text-gray-700">
-                  <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-0.5 mr-2 flex-shrink-0"></i> Indoor & fire-safe applications</li>
-                  <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-0.5 mr-2 flex-shrink-0"></i> No oil, low maintenance</li>
-                  <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-0.5 mr-2 flex-shrink-0"></i> Cast resin or VPI insulation</li>
-                  <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-0.5 mr-2 flex-shrink-0"></i> Environmentally friendly</li>
-                </ul>
-              </div>
-            </li>
-
-            <!-- Auto Transformers -->
-            <li class="splide__slide p-3">
-              <div class="carousel-card bg-gradient-to-br from-white to-teal-50/50 rounded-2xl p-6 shadow-lg border border-teal-100/50">
-                <div class="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center mb-4 mx-auto">
-                  <i class="fas fa-circle-notch text-white text-xl"></i>
-                </div>
-                <h3 class="text-xl font-bold text-gray-900 mb-3 text-center">Auto Transformers</h3>
-                <ul class="space-y-2 text-sm text-gray-700">
-                  <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-0.5 mr-2 flex-shrink-0"></i> Voltage regulation</li>
-                  <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-0.5 mr-2 flex-shrink-0"></i> Compact & cost-effective</li>
-                  <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-0.5 mr-2 flex-shrink-0"></i> High efficiency</li>
-                  <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-0.5 mr-2 flex-shrink-0"></i> Interconnecting systems</li>
-                </ul>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Our Services Section -->
-  <section class="py-20 bg-gradient-to-br from-gray-50 via-orange-50/20 to-white relative overflow-hidden">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16 slide-up">
-        <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-          Comprehensive <span class="bg-gradient-to-r from-orange-600 to-teal-600 bg-clip-text text-transparent">Services</span>
-        </h2>
-        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-          Beyond manufacturing, we offer end-to-end transformer lifecycle support.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Service Cards -->
-        <div class="glass-effect rounded-3xl p-6 backdrop-blur-sm bg-white/70 shadow-lg hover:shadow-xl transition-all hover:-translate-y-2">
-          <div class="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center mb-4">
-            <i class="ri-bar-chart-line text-white text-xl"></i>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-3">Conditioning & Monitoring</h3>
-          <p class="text-gray-700">On-site and off-site conditioning and real-time monitoring of large power transformers.</p>
-        </div>
-
-        <div class="glass-effect rounded-3xl p-6 backdrop-blur-sm bg-white/70 shadow-lg hover:shadow-xl transition-all hover:-translate-y-2">
-          <div class="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center mb-4">
-            <i class="fas fa-droplet text-white text-xl"></i>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-3">Transformer Oil Filtration</h3>
-          <p class="text-gray-700">Advanced filtration and purification of transformer insulating oil to extend life.</p>
-        </div>
-
-        <div class="glass-effect rounded-3xl p-6 backdrop-blur-sm bg-white/70 shadow-lg hover:shadow-xl transition-all hover:-translate-y-2">
-          <div class="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center mb-4">
-            <i class="fas fa-oil-can text-white text-xl"></i>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-3">Transformer Oil Supply</h3>
-          <p class="text-gray-700">Supply of high-grade, tested transformer oil meeting IEC standards.</p>
-        </div>
-
-        <div class="glass-effect rounded-3xl p-6 backdrop-blur-sm bg-white/70 shadow-lg hover:shadow-xl transition-all hover:-translate-y-2">
-          <div class="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center mb-4">
-            <i class="fas fa-microchip text-white text-xl"></i>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-3">Parts & Accessories</h3>
-          <p class="text-gray-700">Genuine spare parts and accessories for all transformer types.</p>
-        </div>
-
-        <div class="glass-effect rounded-3xl p-6 backdrop-blur-sm bg-white/70 shadow-lg hover:shadow-xl transition-all hover:-translate-y-2">
-          <div class="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center mb-4">
-            <i class="fas fa-vial text-white text-xl"></i>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-3">Commissioning & Testing</h3>
-          <p class="text-gray-700">Full commissioning, routine, and type testing with compliance documentation.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
- <!-- Distribution Transformers Section -->
-<section id="distribution" class="py-20 relative overflow-hidden bg-white">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-16 slide-up">
-      <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-        Distribution <span class="bg-gradient-to-r from-orange-600 to-teal-600 bg-clip-text text-transparent">Transformers</span>
-      </h2>
-      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-        Essential for delivering electricity from transmission lines to end-users with maximum efficiency and reliability. We offer distribution transformers in 11 kV & 33 kV voltage class, Single Phase or Three Phase, with hermetically sealed oil tanks and options that can be customized to meet specific customer requirements.
-      </p>
-    </div>
-
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-      <div class="fade-in-left">
-        <img src="src/images/distribution.jpg" alt="Distribution Transformer" class="rounded-3xl shadow-2xl w-full h-auto">
-      </div>
-      <div class="fade-in-right">
-        <h3 class="text-3xl font-bold text-gray-900 mb-6">Key Features</h3>
-        <div class="space-y-4 mb-8">
-          <div class="flex items-start">
-            <div class="flex-shrink-0 w-10 h-10 gradient-bg rounded-full flex items-center justify-center mr-4">
-              <i class="fas fa-shield-alt text-white text-lg"></i>
-            </div>
-            <div>
-              <h4 class="font-semibold text-gray-900">High Reliability</h4>
-              <p class="text-gray-600">Designed for continuous operation with minimal maintenance requirements.</p>
-            </div>
-          </div>
-          <div class="flex items-start">
-            <div class="flex-shrink-0 w-10 h-10 gradient-bg rounded-full flex items-center justify-center mr-4">
-              <i class="fas fa-leaf text-white text-lg"></i>
-            </div>
-            <div>
-              <h4 class="font-semibold text-gray-900">Energy Efficient</h4>
-              <p class="text-gray-600">Low no-load and load losses for reduced operating costs.</p>
-            </div>
-          </div>
-          <div class="flex items-start">
-            <div class="flex-shrink-0 w-10 h-10 gradient-bg rounded-full flex items-center justify-center mr-4">
-              <i class="fas fa-award text-white text-lg"></i>
-            </div>
-            <div>
-              <h4 class="font-semibold text-gray-900">Certified Quality</h4>
-              <p class="text-gray-600">Manufactured to IEC, IEEE, and ISO 9001:2015 standards.</p>
-            </div>
-          </div>
-          <div class="flex items-start">
-            <div class="flex-shrink-0 w-10 h-10 gradient-bg rounded-full flex items-center justify-center mr-4">
-              <i class="fas fa-cogs text-white text-lg"></i>
-            </div>
-            <div>
-              <h4 class="font-semibold text-gray-900">Customizable Options</h4>
-              <p class="text-gray-600">Available in 11 kV & 33 kV, Single/Three Phase, with hermetically sealed oil tanks tailored to client specifications.</p>
-            </div>
-          </div>
-        </div>
-        <a href="contact.html" class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-2xl transition-all duration-300 transform hover:scale-105">
-          <i class="fas fa-phone mr-2"></i>
-          Get a Quote
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-
- <!-- Power Transformers Section -->
-<section id="power" class="py-20 gradient-bg text-white relative overflow-hidden">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-16 slide-up">
-      <h2 class="text-4xl lg:text-5xl font-bold mb-6">
-        Power <span class="bg-gradient-to-r from-yellow-300 to-orange-400 bg-clip-text text-transparent">Transformers</span>
-      </h2>
-      <p class="text-xl max-w-2xl mx-auto">
-        Engineered for the highest performance in critical power transmission and distribution applications, with capacities up to <span class="font-semibold">50 MVA</span> and voltage levels up to <span class="font-semibold">132 kV</span>.
-      </p>
-    </div>
-
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-      <div class="fade-in-left">
-        <h3 class="text-3xl font-bold mb-6">Advanced Engineering</h3>
-        <div class="space-y-4 mb-8">
-          <div class="flex items-start">
-            <div class="flex-shrink-0 w-10 h-10 bg-white/20 rounded-full flex items-center justify-center mr-4">
-              <i class="fas fa-microchip text-white text-lg"></i>
-            </div>
-            <div>
-              <h4 class="font-semibold">Core Design</h4>
-              <p class="text-white/80">Grain-oriented silicon steel core for minimum losses and noise reduction.</p>
-            </div>
-          </div>
-          <div class="flex items-start">
-            <div class="flex-shrink-0 w-10 h-10 bg-white/20 rounded-full flex items-center justify-center mr-4">
-              <i class="fas fa-water text-white text-lg"></i>
-            </div>
-            <div>
-              <h4 class="font-semibold">Cooling Systems</h4>
-              <p class="text-white/80">ONAN, ONAF, OFAF, and ODAF configurations available.</p>
-            </div>
-          </div>
-          <div class="flex items-start">
-            <div class="flex-shrink-0 w-10 h-10 bg-white/20 rounded-full flex items-center justify-center mr-4">
-              <i class="fas fa-shield text-white text-lg"></i>
-            </div>
-            <div>
-              <h4 class="font-semibold">Protection Features</h4>
-              <p class="text-white/80">Buchholz relay, pressure relief, temperature indicators, conservator tank.</p>
-            </div>
-          </div>
-        </div>
-        <a href="contact.html" class="inline-block bg-white text-gray-900 font-semibold py-3 px-6 rounded-2xl hover:bg-gray-100 transition-all duration-300 transform hover:scale-105">
-          <i class="fas fa-file-alt mr-2"></i>
-          Request Specifications
-        </a>
-      </div>
-      <div class="fade-in-right">
-        <img src="src/images/power.jpg" alt="Power Transformer" class="rounded-3xl shadow-2xl w-full h-auto">
-      </div>
-    </div>
-  </div>
-</section>
-
-
-  <!-- Why Choose Us Section -->
-  <section class="py-20 relative overflow-hidden bg-gradient-to-br from-gray-50 via-white to-orange-50/20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16 slide-up">
-        <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-          Why Choose <span class="bg-gradient-to-r from-orange-600 to-teal-600 bg-clip-text text-transparent">Mahashakti</span>
-        </h2>
-        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-          With decades of experience and a commitment to quality, we deliver transformer solutions that exceed industry standards.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="fade-in-left card rounded-3xl p-8 shadow-2xl bg-white hover:shadow-xl transition-all hover:-translate-y-2">
-          <div class="w-16 h-16 gradient-bg rounded-2xl flex items-center justify-center mb-6">
-            <i class="fas fa-brain text-white text-2xl"></i>
-          </div>
-          <h3 class="text-2xl font-bold text-gray-900 mb-4">Technical Expertise</h3>
-          <p class="text-gray-600 mb-4">
-            Our team of experienced engineers and technicians brings decades of knowledge in transformer design, manufacturing, and maintenance.
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10"
+      >
+        <div class="slide-up">
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+            Our
+            <span
+              class="bg-gradient-to-r from-yellow-300 to-orange-400 bg-clip-text text-transparent"
+              >Products & Services</span
+            >
+          </h1>
+          <p
+            class="text-xl sm:text-2xl max-w-3xl mx-auto leading-relaxed text-white/90"
+          >
+            High-quality transformers and comprehensive maintenance services for
+            Kenya's evolving power infrastructure
           </p>
-          <a href="about.html" class="inline-flex items-center text-orange-600 font-medium hover:text-orange-700 transition-colors">
-            Our Team <i class="fas fa-arrow-right ml-2"></i>
-          </a>
         </div>
+      </div>
+    </section>
 
-        <div class="fade-in-up card rounded-3xl p-8 shadow-2xl bg-white hover:shadow-xl transition-all hover:-translate-y-2">
-          <div class="w-16 h-16 gradient-bg rounded-2xl flex items-center justify-center mb-6">
-            <i class="fas fa-certificate text-white text-2xl"></i>
-          </div>
-          <h3 class="text-2xl font-bold text-gray-900 mb-4">Quality Assurance</h3>
-          <p class="text-gray-600 mb-4">
-            All our products undergo rigorous testing procedures to ensure they meet or exceed international quality and safety standards.
+    <!-- Category 1: New Transformers -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 slide-up">
+          <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            Category 1:
+            <span
+              class="bg-gradient-to-r from-orange-600 to-teal-600 bg-clip-text text-transparent"
+              >New Transformers</span
+            >
+          </h2>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            Complete range of new transformers manufactured to the highest
+            quality standards
           </p>
-          <a href="about.html" class="inline-flex items-center text-orange-600 font-medium hover:text-orange-700 transition-colors">
-            Quality Standards <i class="fas fa-arrow-right ml-2"></i>
-          </a>
         </div>
 
-        <div class="fade-in-right card rounded-3xl p-8 shadow-2xl bg-white hover:shadow-xl transition-all hover:-translate-y-2">
-          <div class="w-16 h-16 gradient-bg rounded-2xl flex items-center justify-center mb-6">
-            <i class="fas fa-headset text-white text-2xl"></i>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Distribution Transformers -->
+          <div
+            class="product-card bg-white rounded-3xl p-8 shadow-xl border border-gray-100"
+          >
+            <div
+              class="w-16 h-16 gradient-bg rounded-2xl flex items-center justify-center mb-6"
+            >
+              <i class="fas fa-bolt text-white text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">
+              Distribution Transformers
+            </h3>
+            <p class="text-gray-600 mb-4">
+              We offer distribution transformers in 11 kV & 33 kV voltage class,
+              Single Phase/Three Phase, Hermetically sealed oil, can be
+              customized as per customer requirements.
+            </p>
           </div>
-          <h3 class="text-2xl font-bold text-gray-900 mb-4">Customer Support</h3>
-          <p class="text-gray-600 mb-4">
-            From initial consultation to installation and ongoing maintenance, our dedicated support team is with you every step of the way.
+
+          <!-- Power Transformers -->
+          <div
+            class="product-card bg-white rounded-3xl p-8 shadow-xl border border-gray-100"
+          >
+            <div
+              class="w-16 h-16 gradient-bg rounded-2xl flex items-center justify-center mb-6"
+            >
+              <i class="fas fa-tower-broadcast text-white text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">
+              Power Transformers
+            </h3>
+            <p class="text-gray-600 mb-4">
+              High-capacity units for substations and industrial power
+              distribution, available up to <strong>50 MVA</strong> and
+              <strong>132 kV</strong>. Built for reliability, efficiency, and
+              compliance with international standards.
+            </p>
+          </div>
+
+          <!-- Rectifier/Converter Duty Transformers -->
+          <div
+            class="product-card bg-white rounded-3xl p-8 shadow-xl border border-gray-100"
+          >
+            <div
+              class="w-16 h-16 gradient-bg rounded-2xl flex items-center justify-center mb-6"
+            >
+              <i class="fas fa-plug text-white text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">
+              Rectifier/Converter Duty Transformers
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Specialized transformers for rectifier and converter applications
+            </p>
+          </div>
+
+          <!-- Earthing Transformers -->
+          <div
+            class="product-card bg-white rounded-3xl p-8 shadow-xl border border-gray-100"
+          >
+            <div
+              class="w-16 h-16 gradient-bg rounded-2xl flex items-center justify-center mb-6"
+            >
+              <i class="fas fa-plug-circle-bolt text-white text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">
+              Earthing Transformers
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Purpose-built transformers for system grounding and neutral
+              earthing
+            </p>
+          </div>
+
+          <!-- Furnace Transformers -->
+          <div
+            class="product-card bg-white rounded-3xl p-8 shadow-xl border border-gray-100"
+          >
+            <div
+              class="w-16 h-16 gradient-bg rounded-2xl flex items-center justify-center mb-6"
+            >
+              <i class="fas fa-fire text-white text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">
+              Furnace Transformers
+            </h3>
+            <p class="text-gray-600 mb-4">
+              High-performance transformers for industrial furnace applications
+            </p>
+          </div>
+
+          <!-- Solar Transformers -->
+          <div
+            class="product-card bg-white rounded-3xl p-8 shadow-xl border border-gray-100"
+          >
+            <div
+              class="w-16 h-16 gradient-bg rounded-2xl flex items-center justify-center mb-6"
+            >
+              <i class="fas fa-solar-panel text-white text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">
+              Solar Transformers
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Specialized transformers optimized for solar power installations
+            </p>
+          </div>
+
+          <!-- Dual Ratio Transformers -->
+          <div
+            class="product-card bg-white rounded-3xl p-8 shadow-xl border border-gray-100"
+          >
+            <div
+              class="w-16 h-16 gradient-bg rounded-2xl flex items-center justify-center mb-6"
+            >
+              <i class="fas fa-sliders text-white text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">
+              Dual Ratio Transformers
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Flexible transformers with dual voltage ratio capabilities
+            </p>
+          </div>
+
+          <!-- Auto Transformers -->
+          <div
+            class="product-card bg-white rounded-3xl p-8 shadow-xl border border-gray-100"
+          >
+            <div
+              class="w-16 h-16 gradient-bg rounded-2xl flex items-center justify-center mb-6"
+            >
+              <i class="fas fa-circle-notch text-white text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">
+              Auto Transformers
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Efficient auto transformers for voltage regulation and
+              interconnection
+            </p>
+          </div>
+
+          <!-- Dry Type Transformers -->
+          <div
+            class="product-card bg-white rounded-3xl p-8 shadow-xl border border-gray-100"
+          >
+            <div
+              class="w-16 h-16 gradient-bg rounded-2xl flex items-center justify-center mb-6"
+            >
+              <i class="fas fa-wind text-white text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">
+              Dry Type Transformers
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Oil-free transformers ideal for indoor and fire-sensitive
+              installations
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Category 2: Services & Maintenance -->
+    <section
+      class="py-20 bg-gradient-to-br from-gray-50 via-orange-50/20 to-white"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 slide-up">
+          <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            Category 2:
+            <span
+              class="bg-gradient-to-r from-orange-600 to-teal-600 bg-clip-text text-transparent"
+              >Services & Maintenance</span
+            >
+          </h2>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            Comprehensive transformer lifecycle support and maintenance services
           </p>
-          <a href="contact.html" class="inline-flex items-center text-orange-600 font-medium hover:text-orange-700 transition-colors">
-            Contact Us <i class="fas fa-arrow-right ml-2"></i>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Repair & Overhauling -->
+          <div
+            class="product-card bg-white rounded-3xl p-8 shadow-xl border border-gray-100"
+          >
+            <div
+              class="w-16 h-16 gradient-bg rounded-2xl flex items-center justify-center mb-6"
+            >
+              <i class="fas fa-wrench text-white text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">
+              Repair & Overhauling
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Repair & Overhauling of all kinds of Transformers
+            </p>
+          </div>
+
+          <!-- Conditioning & Monitoring -->
+          <div
+            class="product-card bg-white rounded-3xl p-8 shadow-xl border border-gray-100"
+          >
+            <div
+              class="w-16 h-16 gradient-bg rounded-2xl flex items-center justify-center mb-6"
+            >
+              <i class="fas fa-chart-line text-white text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">
+              Conditioning & Monitoring
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Conditioning & Monitoring of large Power Transformers on site &
+              off site
+            </p>
+          </div>
+
+          <!-- Filtration of Transformer Oil -->
+          <div
+            class="product-card bg-white rounded-3xl p-8 shadow-xl border border-gray-100"
+          >
+            <div
+              class="w-16 h-16 gradient-bg rounded-2xl flex items-center justify-center mb-6"
+            >
+              <i class="fas fa-filter text-white text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">
+              Filtration of Transformer Oil
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Advanced filtration and purification services for transformer
+              insulating oil
+            </p>
+          </div>
+
+          <!-- Supply of Transformer Oil -->
+          <div
+            class="product-card bg-white rounded-3xl p-8 shadow-xl border border-gray-100"
+          >
+            <div
+              class="w-16 h-16 gradient-bg rounded-2xl flex items-center justify-center mb-6"
+            >
+              <i class="fas fa-oil-can text-white text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">
+              Supply of Transformer Oil
+            </h3>
+            <p class="text-gray-600 mb-4">
+              High-grade transformer oil supply meeting international standards
+            </p>
+          </div>
+
+          <!-- Supply of Transformer Parts/Accessories -->
+          <div
+            class="product-card bg-white rounded-3xl p-8 shadow-xl border border-gray-100"
+          >
+            <div
+              class="w-16 h-16 gradient-bg rounded-2xl flex items-center justify-center mb-6"
+            >
+              <i class="fas fa-toolbox text-white text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">
+              Supply of Transformer Parts/Accessories
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Genuine spare parts and accessories for all transformer types
+            </p>
+          </div>
+
+          <!-- Commissioning & Testing -->
+          <div
+            class="product-card bg-white rounded-3xl p-8 shadow-xl border border-gray-100"
+          >
+            <div
+              class="w-16 h-16 gradient-bg rounded-2xl flex items-center justify-center mb-6"
+            >
+              <i class="fas fa-vial text-white text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">
+              Commissioning & Testing
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Commissioning & Testing of Transformers with full compliance
+              documentation
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 gradient-bg text-white relative overflow-hidden">
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10"
+      >
+        <div class="slide-up">
+          <h2 class="text-4xl lg:text-5xl font-bold mb-6">
+            Ready to Power Your Project?
+          </h2>
+          <p
+            class="text-xl max-w-3xl mx-auto leading-relaxed mb-12 text-white/90"
+          >
+            Whether you need new transformers or maintenance services, our
+            experts are ready to help you find the perfect power solution.
+          </p>
+        </div>
+
+        <div
+          class="slide-up flex flex-col sm:flex-row gap-6 justify-center items-center"
+          style="animation-delay: 0.3s"
+        >
+          <a
+            href="tel:+254769702757"
+            class="inline-block bg-white text-gray-900 font-semibold py-4 px-8 rounded-2xl hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-2xl"
+          >
+            <i class="fas fa-phone mr-2"></i>
+            Call Now
+          </a>
+          <a
+            href="mailto:enquiry@mahashaktikenya.com"
+            class="inline-block bg-transparent border-2 border-white text-white font-semibold py-4 px-8 rounded-2xl hover:bg-white hover:text-gray-900 transition-all duration-300 transform hover:scale-105"
+          >
+            <i class="fas fa-envelope mr-2"></i>
+            Email Us
           </a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CTA Section -->
-  <section class="py-20 gradient-bg text-white relative overflow-hidden">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-      <div class="slide-up">
-        <h2 class="text-4xl lg:text-5xl font-bold mb-6">Ready to Power Your Project?</h2>
-        <p class="text-xl max-w-3xl mx-auto leading-relaxed mb-12 text-white/90">
-          Whether you need standard transformers or custom-engineered solutions, our experts are ready to help you find the perfect power solution.
-        </p>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16 relative overflow-hidden">
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10"
+      >
+        <div class="slide-up">
+          <p class="text-lg mb-2">
+            &copy; 2025 Mahashakti Kenya Limited. All rights reserved.
+          </p>
+          <p class="text-gray-400">Providing Power Solutions Across Kenya</p>
+        </div>
+
+        <div
+          class="slide-up flex justify-center space-x-6 mt-8"
+          style="animation-delay: 0.3s"
+        >
+          <a
+            href="#"
+            class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-orange-600 transition-all duration-300 transform hover:scale-110"
+          >
+            <i class="fab fa-facebook-f text-xl"></i>
+          </a>
+          <a
+            href="#"
+            class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-orange-600 transition-all duration-300 transform hover:scale-110"
+          >
+            <i class="fab fa-twitter text-xl"></i>
+          </a>
+          <a
+            href="https://www.mahashaktikenya.com"
+            class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-teal-600 transition-all duration-300 transform hover:scale-110"
+          >
+            <i class="fab fa-linkedin-in text-xl"></i>
+          </a>
+        </div>
       </div>
-      
-      <div class="slide-up flex flex-col sm:flex-row gap-6 justify-center items-center" style="animation-delay: 0.3s">
-        <a href="tel:+254769702757" class="inline-block bg-white text-gray-900 font-semibold py-4 px-8 rounded-2xl hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-2xl">
-          <i class="fas fa-phone mr-2"></i>
-          Call Now
-        </a>
-        <a href="mailto:enquiry@mahashaktikenya.com" class="inline-block bg-transparent border-2 border-white text-white font-semibold py-4 px-8 rounded-2xl hover:bg-white hover:text-gray-900 transition-all duration-300 transform hover:scale-105">
-          <i class="fas fa-envelope mr-2"></i>
-          Email Us
-        </a>
-      </div>
-    </div>
-  </section>
+    </footer>
 
-  <!-- Footer -->
-  <footer class="bg-gray-900 text-white py-16 relative overflow-hidden">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-      <div class="slide-up">
-        <p class="text-lg mb-2">&copy; 2025 Mahashakti Kenya Limited. All rights reserved.</p>
-        <p class="text-gray-400">Providing Power Solutions Across Kenya</p>
-      </div>
-      
-      <div class="slide-up flex justify-center space-x-6 mt-8" style="animation-delay: 0.3s">
-        <a href="#" class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-orange-600 transition-all duration-300 transform hover:scale-110">
-          <i class="fab fa-facebook-f text-xl"></i>
-        </a>
-        <a href="#" class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-orange-600 transition-all duration-300 transform hover:scale-110">
-          <i class="fab fa-twitter text-xl"></i>
-        </a>
-        <a href="https://www.mahashaktikenya.com" class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-teal-600 transition-all duration-300 transform hover:scale-110">
-          <i class="fab fa-linkedin-in text-xl"></i>
-        </a>
-      </div>
-    </div>
-  </footer>
+    <!-- Scroll-triggered animations -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: "0px 0px -50px 0px",
+        };
 
-  <!-- Splide JS -->
-  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
-  
-  <!-- Scroll-triggered animations -->
-  <script>
-    // Initialize Splide with improved settings
-    document.addEventListener('DOMContentLoaded', function() {
-      new Splide('#featured-products-carousel', {
-        type: 'loop',
-        perPage: 4,
-        perMove: 1,
-        gap: '1.5rem',
-        pagination: true,
-        arrows: true,
-        autoplay: true,
-        interval: 4000,
-        pauseOnHover: true,
-        pauseOnFocus: true,
-        breakpoints: {
-          640: { 
-            perPage: 1,
-            arrows: false,
-            gap: '1rem'
-          },
-          768: { 
-            perPage: 2,
-            gap: '1rem'
-          },
-          1024: { 
-            perPage: 3,
-            gap: '1.25rem'
-          },
-          1280: { 
-            perPage: 4 
-          }
-        }
-      }).mount();
+        const observer = new IntersectionObserver(function (entries) {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.style.animationPlayState = "running";
+              entry.target.classList.add("animate-in");
+            }
+          });
+        }, observerOptions);
 
-      // Intersection Observer for animations
-      const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-      };
-
-      const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.style.animationPlayState = 'running';
-            entry.target.classList.add('animate-in');
-          }
+        const animatedElements = document.querySelectorAll(
+          ".slide-up, .product-card"
+        );
+        animatedElements.forEach((el) => {
+          el.style.animationPlayState = "paused";
+          observer.observe(el);
         });
-      }, observerOptions);
-
-      const animatedElements = document.querySelectorAll('.slide-up, .fade-in-left, .fade-in-right, .fade-in-up, .solution-card');
-      animatedElements.forEach(el => {
-        el.style.animationPlayState = 'paused';
-        observer.observe(el);
       });
-    });
-  </script>
-
+    </script>
+  </body>
+</html>
