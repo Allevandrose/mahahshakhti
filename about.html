@@ -6,17 +6,66 @@
   <title>About Us - Mahashakti Kenya Limited</title>
   <meta name="description" content="Learn about Mahashakti Kenya Limited - Leading transformer manufacturer and repair specialists in Kenya since 2016">
   <meta name="keywords" content="Mahashakti Kenya, about us, transformer company Kenya, power solutions, electrical equipment">
-  
+
+  <!-- Canonical & Sitemap -->
+  <link rel="canonical" href="https://www.mahashakti.co.ke/about.html" />
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+
   <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="/src/images/logo.ico" />
-  
-  <link rel="stylesheet" href="src/css/about.css">
+  <link rel="icon" type="image/x-icon" href="/images/logo.ico" />
+
+  <!-- Open Graph / Social Meta -->
+  <meta property="og:title" content="About Mahashakti Kenya Limited - Transformer Experts Since 2016" />
+  <meta property="og:description" content="Leading transformer manufacturer and repair specialists in Kenya. ISO certified, trusted by KPLC & REREC." />
+  <meta property="og:image" content="https://www.mahashakti.co.ke/images/steel.png" />
+  <meta property="og:url" content="https://www.mahashakti.co.ke/about.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_KE" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="About Mahashakti Kenya Limited - Transformer Experts Since 2016" />
+  <meta name="twitter:description" content="Leading transformer manufacturer and repair specialists in Kenya. ISO certified, trusted by KPLC & REREC." />
+  <meta name="twitter:image" content="https://www.mahashakti.co.ke/images/steel.png" />
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Mahashakti Kenya Limited",
+    "url": "https://www.mahashakti.co.ke",
+    "logo": "https://www.mahashakti.co.ke/images/logo.jpg",
+    "sameAs": [
+      "https://facebook.com/mahashaktikenya",
+      "https://twitter.com/mahashaktikenya",
+      "https://linkedin.com/company/mahashakti-kenya"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+254769702757",
+      "contactType": "Customer Service",
+      "areaServed": "KE",
+      "availableLanguage": "English, Swahili"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Ashapura Business Park, Athi River",
+      "addressLocality": "Nairobi",
+      "addressRegion": "Nairobi County",
+      "postalCode": "00509",
+      "addressCountry": "KE"
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="/css/about.css">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
-    /* Custom CSS for animations and effects */
+    /* Your original styles – 100% preserved */
     .gradient-bg {
       background: linear-gradient(135deg, #f97316 0%, #ea580c 50%, #dc2626 100%);
     }
@@ -187,6 +236,21 @@
 </head>
 
 <body class="overflow-x-hidden bg-gray-50">
+  <!-- Hidden LocalBusiness Schema for Local SEO -->
+  <div class="sr-only" aria-hidden="true">
+    <span itemprop="name">Mahashakti Kenya Limited</span>
+    <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+      <span itemprop="streetAddress">Ashapura Business Park, Athi River</span>,
+      <span itemprop="addressLocality">Nairobi</span>,
+      <span itemprop="addressRegion">Nairobi County</span>,
+      <span itemprop="postalCode">00509</span>,
+      <span itemprop="addressCountry">Kenya</span>
+    </span>
+    <span itemprop="telephone">+254769702757</span>
+    <span itemprop="telephone">+254799599961</span>
+    <span itemprop="email">enquiry@mahashaktikenya.com</span>
+    <span itemprop="email">info@mahashaktikenya.com</span>
+  </div>
 
   <!-- Navigation Bar -->
   <nav
@@ -203,14 +267,14 @@
             <div class="relative">
               <div class="w-12 h-12 rounded-2xl gradient-bg flex items-center justify-center mr-3 group-hover:scale-110 transition-all duration-500 shadow-lg floating">
                 <div class="w-14 h-14 bg-white rounded-xl flex items-center justify-center shadow-inner">
-                  <img src="src/images/logo.jpg" alt="Mahashakti logo" class="w-10 h-10 rounded-full object-cover">
+                  <img src="/images/logo.jpg" alt="Mahashakti logo" class="w-10 h-10 rounded-full object-cover">
                 </div>
               </div>
               <div class="absolute -top-1 -right-1 w-4 h-4 gradient-bg rounded-full animate-pulse shadow-lg"></div>
             </div>
             <div>
-              <h1 class="text-xl font-bold transition-colors duration-300" 
-                  :class="scrolled ? 'text-gray-900' : 'text-white'">MAHASHAKTI</h1>
+              <div class="text-xl font-bold transition-colors duration-300" 
+                  :class="scrolled ? 'text-gray-900' : 'text-white'">MAHASHAKTI</div>
               <p class="text-xs font-medium transition-colors duration-300" 
                  :class="scrolled ? 'text-orange-600' : 'text-white/80'">KENYA LIMITED</p>
             </div>
@@ -219,25 +283,25 @@
 
         <!-- Desktop Nav -->
         <div class="hidden md:flex items-center space-x-2">
-          <a href="index.html"
+          <a href="/index.html"
             :class="currentPage === 'home' ? 'bg-orange-100 text-orange-600 shadow-lg' : (scrolled ? 'text-gray-700 hover:text-orange-600 hover:bg-orange-50' : 'text-white hover:bg-white/20')"
             class="px-6 py-3 text-sm font-medium transition-all duration-300 rounded-full"
           >
             Home
           </a>
-          <a href="about.html"
+          <a href="/about.html"
             :class="currentPage === 'about' ? 'bg-orange-100 text-orange-600 shadow-lg' : (scrolled ? 'text-gray-700 hover:text-orange-600 hover:bg-orange-50' : 'text-white hover:bg-white/20')"
             class="px-6 py-3 text-sm font-medium transition-all duration-300 rounded-full"
           >
             About
           </a>
-          <a href="products.html"
+          <a href="/products.html"
             :class="currentPage === 'products' ? 'bg-orange-100 text-orange-600 shadow-lg' : (scrolled ? 'text-gray-700 hover:text-orange-600 hover:bg-orange-50' : 'text-white hover:bg-white/20')"
             class="px-6 py-3 text-sm font-medium transition-all duration-300 rounded-full"
           >
             Products
           </a>
-          <a href="contact.html"
+          <a href="/contact.html"
             :class="currentPage === 'contact' ? 'bg-orange-100 text-orange-600 shadow-lg' : (scrolled ? 'text-gray-700 hover:text-orange-600 hover:bg-orange-50' : 'text-white hover:bg-white/20')"
             class="px-6 py-3 text-sm font-medium transition-all duration-300 rounded-full"
           >
@@ -271,25 +335,25 @@
       class="md:hidden bg-white/95 backdrop-blur-xl border-t border-orange-100/50"
     >
       <div class="px-4 py-6 space-y-2">
-        <a href="index.html"
+        <a href="/index.html"
           class="block w-full text-left px-4 py-3 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-orange-50 rounded-xl transition-all duration-300"
           @click="mobileMenuOpen = false"
         >
           Home
         </a>
-        <a href="about.html"
+        <a href="/about.html"
           class="block w-full text-left px-4 py-3 text-base font-medium bg-orange-100 text-orange-600 shadow-lg rounded-xl transition-all duration-300"
           @click="mobileMenuOpen = false"
         >
           About
         </a>
-        <a href="products.html"
+        <a href="/products.html"
           class="block w-full text-left px-4 py-3 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-orange-50 rounded-xl transition-all duration-300"
           @click="mobileMenuOpen = false"
         >
           Products
         </a>
-        <a href="contact.html"
+        <a href="/contact.html"
           class="block w-full text-left px-4 py-3 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-orange-50 rounded-xl transition-all duration-300"
           @click="mobileMenuOpen = false"
         >
@@ -301,7 +365,6 @@
 
   <!-- Hero Section -->
   <section class="relative pt-24 pb-16 gradient-bg text-white overflow-hidden">
-    <!-- Floating Elements -->
     <div class="absolute top-20 left-10 w-32 h-32 morphing-blob bg-yellow-400/20 floating blur-sm"></div>
     <div class="absolute top-1/3 right-16 w-24 h-24 morphing-blob bg-orange-400/20 floating-delayed blur-sm"></div>
     <div class="absolute bottom-32 left-1/4 w-20 h-20 morphing-blob bg-teal-400/20 floating blur-sm"></div>
@@ -320,7 +383,6 @@
 
   <!-- Company Introduction -->
   <section class="py-20 relative overflow-hidden">
-    <!-- Background Pattern -->
     <div class="absolute inset-0 opacity-5">
       <div class="absolute top-0 left-0 w-96 h-96 bg-gradient-to-r from-orange-400 to-yellow-500 rounded-full mix-blend-multiply filter blur-3xl floating"></div>
       <div class="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-r from-red-400 to-orange-400 rounded-full mix-blend-multiply filter blur-3xl floating-delayed"></div>
@@ -328,37 +390,30 @@
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        
-        <!-- Content -->
         <div class="fade-in-left">
           <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-8">
             Powering Kenya's <span class="text-gradient">Future</span>
           </h2>
-          
           <div class="space-y-6 text-lg text-gray-600 leading-relaxed">
             <p>
               Mahashakti Kenya Ltd (MKL) is a premier manufacturer and repairer of Distribution and Power Transformers, proudly based in Nairobi, Kenya. Since our establishment in 2016, we have been at the forefront of Kenya's electrical infrastructure development.
             </p>
-            
             <p>
               Founded in strategic collaboration with Mahashakti Energy Ltd., India – one of the world's largest and most respected manufacturer-exporters of Distribution Transformers, Power Transformers, and Electronic Energy Meters since 1994. Our parent company's legacy spans over three decades, with more than 500,000 transformers manufactured and supplied worldwide.
             </p>
-            
             <p>
               Following in the footsteps of our parent company, MKL is committed to becoming Africa's leading transformer manufacturer, equipped with state-of-the-art manufacturing facilities, highly qualified staff, and an unwavering focus on continuous improvement and innovation.
             </p>
           </div>
         </div>
 
-        <!-- Image Placeholder -->
         <div class="fade-in-right">
-  <div class="contact-card rounded-3xl p-8 shadow-2xl">
-    <div class="rounded-2xl overflow-hidden aspect-video">
-      <img src="src/images/steel.png" alt="Manufacturing Excellence" class="w-full h-full object-cover" />
-    </div>
-  </div>
-</div>
-
+          <div class="contact-card rounded-3xl p-8 shadow-2xl">
+            <div class="rounded-2xl overflow-hidden aspect-video">
+              <img src="/images/steel.png" alt="Manufacturing Excellence at Mahashakti Kenya" class="w-full h-full object-cover" />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -419,8 +474,6 @@
   <section class="py-20 relative overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
-        
-        <!-- Vision -->
         <div class="fade-in-left">
           <div class="contact-card rounded-3xl p-8 shadow-2xl h-full">
             <div class="w-16 h-16 gradient-bg rounded-2xl flex items-center justify-center mb-6">
@@ -434,7 +487,6 @@
           </div>
         </div>
 
-        <!-- Mission -->
         <div class="fade-in-right">
           <div class="contact-card rounded-3xl p-8 shadow-2xl h-full">
             <div class="w-16 h-16 gradient-bg rounded-2xl flex items-center justify-center mb-6">
@@ -504,7 +556,6 @@
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Testing Laboratory -->
         <div class="feature-card rounded-3xl p-6 shadow-xl scale-hover">
           <div class="w-14 h-14 gradient-bg rounded-2xl flex items-center justify-center mb-4">
             <i class="ri-microscope-line text-xl text-white"></i>
@@ -513,7 +564,6 @@
           <p class="text-gray-600 text-sm">International Standard Testing Laboratory (IEC 60076) with full routine tests and 100% accuracy</p>
         </div>
 
-        <!-- Air Dry & Vacuum Ovens -->
         <div class="feature-card rounded-3xl p-6 shadow-xl scale-hover">
           <div class="w-14 h-14 gradient-bg rounded-2xl flex items-center justify-center mb-4">
             <i class="ri-temp-hot-line text-xl text-white"></i>
@@ -522,7 +572,6 @@
           <p class="text-gray-600 text-sm">Advanced air dry & vacuum ovens for distribution and power transformers</p>
         </div>
 
-        <!-- Painting Chamber -->
         <div class="feature-card rounded-3xl p-6 shadow-xl scale-hover">
           <div class="w-14 h-14 gradient-bg rounded-2xl flex items-center justify-center mb-4">
             <i class="ri-brush-line text-xl text-white"></i>
@@ -531,7 +580,6 @@
           <p class="text-gray-600 text-sm">Professional painting chamber with drying oven, epoxy primer, anti-rust & moisture protection</p>
         </div>
 
-        <!-- Oil Filtration -->
         <div class="feature-card rounded-3xl p-6 shadow-xl scale-hover">
           <div class="w-14 h-14 gradient-bg rounded-2xl flex items-center justify-center mb-4">
             <i class="ri-drop-line text-xl text-white"></i>
@@ -540,7 +588,6 @@
           <p class="text-gray-600 text-sm">Advanced oil filtration facility that improves BDV, removes moisture/air bubbles, extends lifespan</p>
         </div>
 
-        <!-- Winding Section -->
         <div class="feature-card rounded-3xl p-6 shadow-xl scale-hover">
           <div class="w-14 h-14 gradient-bg rounded-2xl flex items-center justify-center mb-4">
             <i class="ri-settings-line text-xl text-white"></i>
@@ -549,7 +596,6 @@
           <p class="text-gray-600 text-sm">Climatically controlled section optimized for stress resistance with spiral/disc/helical designs</p>
         </div>
 
-        <!-- Fabrication -->
         <div class="feature-card rounded-3xl p-6 shadow-xl scale-hover">
           <div class="w-14 h-14 gradient-bg rounded-2xl flex items-center justify-center mb-4">
             <i class="ri-hammer-line text-xl text-white"></i>
@@ -559,7 +605,6 @@
         </div>
       </div>
 
-      <!-- Additional Infrastructure Feature -->
       <div class="mt-12 slide-up" style="animation-delay: 0.3s">
         <div class="contact-card rounded-3xl p-8 shadow-2xl">
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
@@ -571,18 +616,17 @@
                 Our specialized paper covering facility provides dual and three-layer covering for conductors, ensuring maximum insulation and protection for all transformer components.
               </p>
             </div>
-           <div class="fade-in-right">
-  <div class="contact-card rounded-3xl p-8 shadow-2xl">
-    <div class="aspect-video rounded-2xl overflow-hidden">
-      <img 
-        src="src/images/paper.png" 
-        alt="Paper Covering Facility" 
-        class="w-full h-full object-cover"
-      />
-    </div>
-  </div>
-</div>
-
+            <div class="fade-in-right">
+              <div class="contact-card rounded-3xl p-8 shadow-2xl">
+                <div class="aspect-video rounded-2xl overflow-hidden">
+                  <img 
+                    src="/images/paper.png" 
+                    alt="Paper Covering Facility at Mahashakti Kenya" 
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -593,18 +637,14 @@
   <section class="py-20 warm-bg-3">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        
-        <!-- Content -->
         <div class="fade-in-left">
           <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-8">
             Innovation & <span class="text-gradient">R&D Excellence</span>
           </h2>
-          
           <div class="space-y-6 text-lg text-gray-600 leading-relaxed">
             <p>
               Our dedicated Research & Development division works continuously on developing new products, improving manufacturing processes, integrating modern technology, and advancing materials science.
             </p>
-            
             <p>
               We believe that innovation is the key to staying ahead in the rapidly evolving electrical industry. Our R&D team collaborates closely with our parent company's research facilities in India, leveraging decades of experience and cutting-edge technology.
             </p>
@@ -638,19 +678,17 @@
           </div>
         </div>
 
-       <!-- Innovation Visual -->
-<div class="fade-in-right">
-  <div class="contact-card rounded-3xl p-8 shadow-2xl">
-    <div class="aspect-square rounded-2xl overflow-hidden">
-      <img 
-        src="src/images/innovation.png" 
-        alt="Innovation and R&D Illustration" 
-        class="w-full h-full object-cover"
-      />
-    </div>
-  </div>
-</div>
-
+        <div class="fade-in-right">
+          <div class="contact-card rounded-3xl p-8 shadow-2xl">
+            <div class="aspect-square rounded-2xl overflow-hidden">
+              <img 
+                src="/images/innovation.png" 
+                alt="Innovation and R&D at Mahashakti Kenya" 
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -668,11 +706,9 @@
       </div>
 
       <div class="relative">
-        <!-- Timeline line -->
         <div class="absolute left-8 top-0 bottom-0 w-px bg-gradient-to-b from-orange-400 to-orange-600"></div>
         
         <div class="space-y-12">
-          <!-- 1994 - Parent Company Founded -->
           <div class="relative timeline-item pl-20 slide-up">
             <div class="contact-card rounded-2xl p-6 shadow-lg">
               <div class="flex items-start justify-between mb-4">
@@ -684,7 +720,6 @@
             </div>
           </div>
 
-          <!-- 2016 - MKL Established -->
           <div class="relative timeline-item pl-20 slide-up" style="animation-delay: 0.1s">
             <div class="contact-card rounded-2xl p-6 shadow-lg">
               <div class="flex items-start justify-between mb-4">
@@ -696,7 +731,6 @@
             </div>
           </div>
 
-          <!-- Present - Current Status -->
           <div class="relative timeline-item pl-20 slide-up" style="animation-delay: 0.2s">
             <div class="contact-card rounded-2xl p-6 shadow-lg">
               <div class="flex items-start justify-between mb-4">
@@ -708,7 +742,6 @@
             </div>
           </div>
 
-          <!-- Future - Vision -->
           <div class="relative timeline-item pl-20 slide-up" style="animation-delay: 0.3s">
             <div class="contact-card rounded-2xl p-6 shadow-lg border-2 border-orange-200">
               <div class="flex items-start justify-between mb-4">
@@ -726,7 +759,6 @@
 
   <!-- Partnerships -->
   <section class="py-20 gradient-bg text-white relative overflow-hidden">
-    <!-- Decorative Elements -->
     <div class="absolute inset-0 opacity-10">
       <div class="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.1"%3E%3Ccircle cx="7" cy="7" r="7"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')]"></div>
     </div>
@@ -740,16 +772,15 @@
       </div>
       
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <div class="slide-up bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20">
-  <div class="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-6">
-    <i class="ri-building-line text-3xl text-white"></i>
-  </div>
-  <h3 class="text-2xl font-bold mb-4">Kenya Power & Lighting Company (KPLC)</h3>
-  <p class="text-white/80 leading-relaxed">
-    Contracted and empaneled partner for transformer repair services and supply of new transformers, contributing to Kenya's national power infrastructure development and maintenance.
-  </p>
-</div>
-
+        <div class="slide-up bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20">
+          <div class="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-6">
+            <i class="ri-building-line text-3xl text-white"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-4">Kenya Power & Lighting Company (KPLC)</h3>
+          <p class="text-white/80 leading-relaxed">
+            Contracted and empaneled partner for transformer repair services and supply of new transformers, contributing to Kenya's national power infrastructure development and maintenance.
+          </p>
+        </div>
 
         <div class="slide-up bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20" style="animation-delay: 0.2s">
           <div class="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-6">
@@ -777,11 +808,11 @@
       </div>
       
       <div class="slide-up flex flex-col sm:flex-row gap-6 justify-center items-center" style="animation-delay: 0.3s">
-        <a href="contact.html" class="glow-button inline-block bg-orange-500 hover:bg-orange-600 text-white font-semibold py-4 px-8 rounded-2xl transition-all duration-300 transform hover:scale-105 shadow-2xl">
+        <a href="/contact.html" class="glow-button inline-block bg-orange-500 hover:bg-orange-600 text-white font-semibold py-4 px-8 rounded-2xl transition-all duration-300 transform hover:scale-105 shadow-2xl">
           <i class="ri-chat-1-line mr-2"></i>
           Get in Touch
         </a>
-        <a href="products.html" class="inline-block bg-transparent border-2 border-orange-500 text-orange-600 font-semibold py-4 px-8 rounded-2xl hover:bg-orange-500 hover:text-white transition-all duration-300 transform hover:scale-105">
+        <a href="/products.html" class="inline-block bg-transparent border-2 border-orange-500 text-orange-600 font-semibold py-4 px-8 rounded-2xl hover:bg-orange-500 hover:text-white transition-all duration-300 transform hover:scale-105">
           <i class="ri-product-hunt-line mr-2"></i>
           View Products
         </a>
@@ -791,7 +822,6 @@
 
   <!-- Footer -->
   <footer class="bg-gray-900 text-white py-16 relative overflow-hidden">
-    <!-- Background Pattern -->
     <div class="absolute inset-0 opacity-5">
       <div class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-l from-orange-500 to-red-600 rounded-full filter blur-3xl"></div>
     </div>
@@ -801,7 +831,7 @@
         <div class="flex items-center justify-center mb-6">
           <div class="w-12 h-12 rounded-2xl gradient-bg flex items-center justify-center mr-3">
             <div class="w-14 h-14 bg-white rounded-xl flex items-center justify-center shadow-inner">
-              <img src="src/images/logo.jpg" alt="Mahashakti logo" class="w-10 h-10 rounded-full object-cover">
+              <img src="/images/logo.jpg" alt="Mahashakti logo" class="w-10 h-10 rounded-full object-cover">
             </div>
           </div>
           <div class="text-left">
@@ -813,7 +843,6 @@
         <p class="text-gray-400">Providing Power Solutions Across Kenya Since 2016</p>
       </div>
       
-      <!-- Social Links -->
       <div class="slide-up flex justify-center space-x-6 mt-8" style="animation-delay: 0.3s">
         <a href="#" class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-orange-600 transition-all duration-300 transform hover:scale-110">
           <i class="ri-facebook-fill text-xl"></i>
@@ -833,7 +862,6 @@
 
   <!-- Scroll-triggered animations -->
   <script>
-    // Intersection Observer for animations
     const observerOptions = {
       threshold: 0.1,
       rootMargin: '0px 0px -50px 0px'
@@ -847,7 +875,6 @@
       });
     }, observerOptions);
 
-    // Observe all animated elements
     document.addEventListener('DOMContentLoaded', function() {
       const animatedElements = document.querySelectorAll('.slide-up, .fade-in-left, .fade-in-right');
       animatedElements.forEach(el => {
@@ -856,7 +883,6 @@
       });
     });
 
-    // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -870,6 +896,5 @@
       });
     });
   </script>
-
 </body>
 </html>

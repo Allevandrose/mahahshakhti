@@ -13,10 +13,59 @@
       content="transformers Kenya, power solutions, electrical equipment, transformer manufacturing Kenya"
     />
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/src/images/logo.ico" />
+    <!-- Canonical & Sitemap -->
+    <link rel="canonical" href="https://www.mahashakti.co.ke/products.html" />
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
 
-    <link rel="stylesheet" href="src/css/products.css" />
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/images/logo.ico" />
+
+    <!-- Open Graph / Social Meta -->
+    <meta property="og:title" content="Products - Mahashakti Kenya Limited" />
+    <meta property="og:description" content="Explore our range of high-quality transformers and power solutions at Mahashakti Kenya Limited" />
+    <meta property="og:image" content="https://www.mahashakti.co.ke/images/logo.jpg" />
+    <meta property="og:url" content="https://www.mahashakti.co.ke/products.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_KE" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Products - Mahashakti Kenya Limited" />
+    <meta name="twitter:description" content="Explore our range of high-quality transformers and power solutions at Mahashakti Kenya Limited" />
+    <meta name="twitter:image" content="https://www.mahashakti.co.ke/images/logo.jpg" />
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Mahashakti Kenya Limited",
+      "url": "https://www.mahashakti.co.ke",
+      "logo": "https://www.mahashakti.co.ke/images/logo.jpg",
+      "sameAs": [
+        "https://facebook.com/mahashaktikenya",
+        "https://twitter.com/mahashaktikenya",
+        "https://linkedin.com/company/mahashakti-kenya"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+254769702757",
+        "contactType": "Customer Service",
+        "areaServed": "KE",
+        "availableLanguage": "English, Swahili"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Ashapura Business Park, Athi River",
+        "addressLocality": "Nairobi",
+        "addressRegion": "Nairobi County",
+        "postalCode": "00509",
+        "addressCountry": "KE"
+      }
+    }
+    </script>
+
+    <link rel="stylesheet" href="/css/products.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
       rel="stylesheet"
@@ -91,6 +140,22 @@
   </head>
 
   <body class="overflow-x-hidden bg-gray-50">
+    <!-- Hidden LocalBusiness Schema for Local SEO -->
+    <div class="sr-only" aria-hidden="true">
+      <span itemprop="name">Mahashakti Kenya Limited</span>
+      <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+        <span itemprop="streetAddress">Ashapura Business Park, Athi River</span>,
+        <span itemprop="addressLocality">Nairobi</span>,
+        <span itemprop="addressRegion">Nairobi County</span>,
+        <span itemprop="postalCode">00509</span>,
+        <span itemprop="addressCountry">Kenya</span>
+      </span>
+      <span itemprop="telephone">+254769702757</span>
+      <span itemprop="telephone">+254799599961</span>
+      <span itemprop="email">enquiry@mahashaktikenya.com</span>
+      <span itemprop="email">info@mahashaktikenya.com</span>
+    </div>
+
     <!-- Navigation Bar -->
     <nav
       x-data="{ scrolled: false, mobileMenuOpen: false, currentPage: 'products' }"
@@ -111,7 +176,7 @@
                     class="w-14 h-14 bg-white rounded-xl flex items-center justify-center shadow-inner"
                   >
                     <img
-                      src="src/images/logo.jpg"
+                      src="/images/logo.jpg"
                       alt="Mahashakti logo"
                       class="w-10 h-10 rounded-full object-cover"
                     />
@@ -122,12 +187,12 @@
                 ></div>
               </div>
               <div>
-                <h1
+                <div
                   class="text-xl font-bold transition-colors duration-300"
                   :class="scrolled ? 'text-gray-900' : 'text-white'"
                 >
                   MAHASHAKTI
-                </h1>
+                </div>
                 <p
                   class="text-xs font-medium transition-colors duration-300"
                   :class="scrolled ? 'text-orange-600' : 'text-white/80'"
@@ -141,28 +206,28 @@
           <!-- Desktop Nav -->
           <div class="hidden md:flex items-center space-x-2">
             <a
-              href="index.html"
+              href="/index.html"
               :class="currentPage === 'home' ? 'bg-orange-100 text-orange-600 shadow-lg' : (scrolled ? 'text-gray-700 hover:text-orange-600 hover:bg-orange-50' : 'text-white hover:bg-white/20')"
               class="px-6 py-3 text-sm font-medium transition-all duration-300 rounded-full"
             >
               Home
             </a>
             <a
-              href="about.html"
+              href="/about.html"
               :class="currentPage === 'about' ? 'bg-orange-100 text-orange-600 shadow-lg' : (scrolled ? 'text-gray-700 hover:text-orange-600 hover:bg-orange-50' : 'text-white hover:bg-white/20')"
               class="px-6 py-3 text-sm font-medium transition-all duration-300 rounded-full"
             >
               About
             </a>
             <a
-              href="products.html"
+              href="/products.html"
               :class="currentPage === 'products' ? 'bg-orange-100 text-orange-600 shadow-lg' : (scrolled ? 'text-gray-700 hover:text-orange-600 hover:bg-orange-50' : 'text-white hover:bg-white/20')"
               class="px-6 py-3 text-sm font-medium transition-all duration-300 rounded-full"
             >
               Products
             </a>
             <a
-              href="contact.html"
+              href="/contact.html"
               :class="currentPage === 'contact' ? 'bg-orange-100 text-orange-600 shadow-lg' : (scrolled ? 'text-gray-700 hover:text-orange-600 hover:bg-orange-50' : 'text-white hover:bg-white/20')"
               class="px-6 py-3 text-sm font-medium transition-all duration-300 rounded-full"
             >
@@ -203,28 +268,28 @@
       >
         <div class="px-4 py-6 space-y-2">
           <a
-            href="index.html"
+            href="/index.html"
             class="block w-full text-left px-4 py-3 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-orange-50 rounded-xl transition-all duration-300"
             @click="mobileMenuOpen = false"
           >
             Home
           </a>
           <a
-            href="about.html"
+            href="/about.html"
             class="block w-full text-left px-4 py-3 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-orange-50 rounded-xl transition-all duration-300"
             @click="mobileMenuOpen = false"
           >
             About
           </a>
           <a
-            href="products.html"
+            href="/products.html"
             class="block w-full text-left px-4 py-3 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-orange-50 rounded-xl transition-all duration-300"
             @click="mobileMenuOpen = false"
           >
             Products
           </a>
           <a
-            href="contact.html"
+            href="/contact.html"
             class="block w-full text-left px-4 py-3 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-orange-50 rounded-xl transition-all duration-300"
             @click="mobileMenuOpen = false"
           >
@@ -687,7 +752,7 @@
             <i class="fab fa-twitter text-xl"></i>
           </a>
           <a
-            href="https://www.mahashaktikenya.com"
+            href="#"
             class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-teal-600 transition-all duration-300 transform hover:scale-110"
           >
             <i class="fab fa-linkedin-in text-xl"></i>
