@@ -25,3 +25,13 @@
     <priority>0.7</priority>
   </url>
 </urlset>
+
+
+User-agent: *
+Allow: /
+
+Sitemap: https://www.mahashakti.co.ke/sitemap.xml
+
+# Disallow crawling of admin or dev folders (if any)
+# Disallow: /admin/
+# Disallow: /dev/
