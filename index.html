@@ -263,33 +263,33 @@
         </div>
       </div>
 
-    <!-- Desktop Navigation -->
+   <!-- Desktop Navigation -->
       <div class="hidden md:flex items-center space-x-2">
         <a
           href="/index.html"
-          :class="currentPage === 'home' ? 'bg-orange-100 text-orange-600 shadow-lg' : (scrolled ? 'text-gray-700 hover:text-orange-600 hover:bg-orange-50' : 'text-white/90 hover:bg-white/20')"
-          class="px-6 py-3 text-sm font-medium transition-all duration-300 rounded-full"
+          class="px-6 py-3 text-sm font-medium transition-all duration-300 rounded-full text-white hover:bg-white/20"
+          :class="currentPage === 'home' ? 'bg-orange-100 !text-orange-600 shadow-lg' : (scrolled ? '!text-gray-700 hover:!text-orange-600 hover:!bg-orange-50' : '')"
         >
           Home
         </a>
         <a
           href="/about.html"
-          :class="currentPage === 'about' ? 'bg-orange-100 text-orange-600 shadow-lg' : (scrolled ? 'text-gray-700 hover:text-orange-600 hover:bg-orange-50' : 'text-white/90 hover:bg-white/20')"
-          class="px-6 py-3 text-sm font-medium transition-all duration-300 rounded-full"
+          class="px-6 py-3 text-sm font-medium transition-all duration-300 rounded-full text-white hover:bg-white/20"
+          :class="currentPage === 'about' ? 'bg-orange-100 !text-orange-600 shadow-lg' : (scrolled ? '!text-gray-700 hover:!text-orange-600 hover:!bg-orange-50' : '')"
         >
           About
         </a>
         <a
           href="/products.html"
-          :class="currentPage === 'products' ? 'bg-orange-100 text-orange-600 shadow-lg' : (scrolled ? 'text-gray-700 hover:text-orange-600 hover:bg-orange-50' : 'text-white/90 hover:bg-white/20')"
-          class="px-6 py-3 text-sm font-medium transition-all duration-300 rounded-full"
+          class="px-6 py-3 text-sm font-medium transition-all duration-300 rounded-full text-white hover:bg-white/20"
+          :class="currentPage === 'products' ? 'bg-orange-100 !text-orange-600 shadow-lg' : (scrolled ? '!text-gray-700 hover:!text-orange-600 hover:!bg-orange-50' : '')"
         >
           Products
         </a>
         <a
           href="/contact.html"
-          :class="currentPage === 'contact' ? 'bg-orange-100 text-orange-600 shadow-lg' : (scrolled ? 'text-gray-700 hover:text-orange-600 hover:bg-orange-50' : 'text-white/90 hover:bg-white/20')"
-          class="px-6 py-3 text-sm font-medium transition-all duration-300 rounded-full"
+          class="px-6 py-3 text-sm font-medium transition-all duration-300 rounded-full text-white hover:bg-white/20"
+          :class="currentPage === 'contact' ? 'bg-orange-100 !text-orange-600 shadow-lg' : (scrolled ? '!text-gray-700 hover:!text-orange-600 hover:!bg-orange-50' : '')"
         >
           Contact
         </a>
