@@ -76,127 +76,6 @@
       src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
     ></script>
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <style>
-      @keyframes float {
-        0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(-20px); }
-      }
-      
-      @keyframes pulse-slow {
-        0%, 100% { opacity: 1; }
-        50% { opacity: 0.5; }
-      }
-      
-      @keyframes slide-in {
-        from {
-          opacity: 0;
-          transform: translateY(30px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-      
-      .floating {
-        animation: float 6s ease-in-out infinite;
-      }
-      
-      .slide-up {
-        opacity: 0;
-        animation: slide-in 0.8s ease-out forwards;
-        animation-play-state: paused;
-      }
-      
-      .stat-card {
-        background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255,255,255,0.2);
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      }
-      
-      .stat-card:hover {
-        transform: translateY(-8px) scale(1.02);
-        background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.1) 100%);
-        box-shadow: 0 20px 40px rgba(59, 130, 246, 0.3);
-      }
-      
-      .cert-badge {
-        transition: all 0.3s ease;
-      }
-      
-      .cert-badge:hover {
-        transform: rotate(5deg) scale(1.1);
-      }
-      
-      .gradient-blue {
-        background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
-      }
-      
-      .text-gradient-blue {
-        background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-      }
-      
-      /* New gradients for the site */
-      .gradient-overlay {
-        background: linear-gradient(0deg, rgba(17,24,39,0.8) 0%, rgba(17,24,39,0.4) 50%, rgba(17,24,39,0.9) 100%);
-      }
-      
-      .gradient-bg {
-        background: linear-gradient(135deg, #F7931E 0%, #007A78 100%);
-      }
-      
-      .text-gradient {
-        background: linear-gradient(135deg, #F7931E 0%, #FFCC00 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-      }
-      
-      .text-gradient-teal {
-        background: linear-gradient(135deg, #007A78 0%, #00C896 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-      }
-      
-      .warm-bg-1 {
-        background-color: #fefcfb;
-      }
-      
-      .warm-bg-3 {
-        background-color: #f7f7f7;
-      }
-      
-      /* Card Hover Effects */
-      .scale-hover {
-        transition: transform 0.4s ease-in-out;
-      }
-      
-      .scale-hover:hover {
-        transform: scale(1.02);
-      }
-      
-      .orange-glow:hover {
-        box-shadow: 0 15px 30px rgba(247, 147, 30, 0.4);
-      }
-      
-      .teal-glow:hover {
-        box-shadow: 0 15px 30px rgba(0, 122, 120, 0.4);
-      }
-      
-      .glow-button {
-        box-shadow: 0 5px 15px rgba(247, 147, 30, 0.4);
-      }
-      
-      .glow-button:hover {
-        box-shadow: 0 10px 20px rgba(247, 147, 30, 0.6);
-      }
-    </style>
   </head>
 
   <body class="overflow-x-hidden">
@@ -216,256 +95,234 @@
       <span itemprop="email">info@mahashaktikenya.com</span>
     </div>
 
-    <nav
-      x-data="{ scrolled: false, mobileMenuOpen: false, currentPage: 'home' }"
-      @scroll.window="scrolled = window.scrollY > 50"
-      class="fixed w-full z-50 transition-all duration-500"
-      :class="scrolled ?
-        'bg-white/95 backdrop-blur-xl shadow-2xl border-b border-orange-100' : 'bg-white/10 backdrop-blur-lg'"
-    >
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-20 items-center">
-          <div class="flex items-center group">
-            <div class="flex-shrink-0 flex items-center">
-              <div class="relative">
-          
-                <div
-                  class="w-12 h-12 rounded-2xl gradient-bg flex items-center justify-center mr-3 group-hover:scale-110 transition-all duration-500 shadow-lg floating"
-                >
-                  <div
-                    class="w-14 h-14 bg-white rounded-xl flex items-center justify-center shadow-inner"
-   
-                  >
-                    <img
-                      src="/images/logo.jpg"
-                      alt="Mahashakti logo"
-                    
-                      class="w-10 h-10 rounded-full object-cover"
-                    />
-                  </div>
-                </div>
-                <div
-                  class="absolute -top-1 -right-1 w-4 h-4 gradient-bg rounded-full 
-                    animate-pulse shadow-lg"
-                ></div>
-              </div>
-              <div>
-                <div
-              
-                  class="text-xl font-bold transition-colors duration-300"
-                  :class="scrolled ?
-                    'text-gray-900' : 'text-white'"
-                >
-                  MAHASHAKTI
-                </div>
-                <p
-                  class="text-xs font-medium transition-colors duration-300"
-           
-                  :class="scrolled ? 'text-orange-600' : 'text-white/80'"
-                >
-                  KENYA LIMITED
-                </p>
+    <!-- Navigation Bar -->
+<nav
+  x-data="{ scrolled: false, mobileMenuOpen: false, currentPage: 'home' }"
+  @scroll.window="scrolled = window.scrollY > 50"
+  class="fixed w-full z-50 transition-all duration-500"
+  :class="scrolled ? 'bg-white/95 backdrop-blur-xl shadow-2xl border-b border-orange-100' : 'bg-white/10 backdrop-blur-lg'"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between h-20 items-center">
+      <!-- Logo Section -->
+      <div class="flex items-center group">
+        <div class="flex-shrink-0 flex items-center">
+          <div class="relative">
+            <div
+              class="w-12 h-12 rounded-2xl gradient-bg flex items-center justify-center mr-3 group-hover:scale-110 transition-all duration-500 shadow-lg floating"
+            >
+              <div
+                class="w-14 h-14 bg-white rounded-xl flex items-center justify-center shadow-inner"
+              >
+                <img
+                  src="/images/logo.jpg"
+                  alt="Mahashakti logo"
+                  class="w-10 h-10 rounded-full object-cover"
+                />
               </div>
             </div>
+            <div
+              class="absolute -top-1 -right-1 w-4 h-4 gradient-bg rounded-full animate-pulse shadow-lg"
+            ></div>
           </div>
-
-  
-          <div class="hidden md:flex items-center space-x-2">
-            <a
-              href="/index.html"
-              :class="currentPage === 'home' ?
-                'bg-orange-100 text-orange-600 shadow-lg' : (scrolled ? 'text-gray-700 hover:text-orange-600 hover:bg-orange-50' : 'text-white hover:bg-white/20')"
-              class="px-6 py-3 text-sm font-medium transition-all duration-300 rounded-full"
+          <div>
+            <h1
+              class="text-xl font-bold transition-colors duration-300"
+              :class="scrolled ? 'text-gray-900' : 'text-white'"
             >
-              Home
-            </a>
-            <a
-              href="/about.html"
-     
-              :class="currentPage === 'about' ?
-                'bg-orange-100 text-orange-600 shadow-lg' : (scrolled ? 'text-gray-700 hover:text-orange-600 hover:bg-orange-50' : 'text-white hover:bg-white/20')"
-              class="px-6 py-3 text-sm font-medium transition-all duration-300 rounded-full"
+              MAHASHAKTI
+            </h1>
+            <p
+              class="text-xs font-medium transition-colors duration-300"
+              :class="scrolled ? 'text-orange-600' : 'text-white/80'"
             >
-              About
-            </a>
-            <a
-              href="/products.html"
-     
-              :class="currentPage === 'products' ?
-                'bg-orange-100 text-orange-600 shadow-lg' : (scrolled ? 'text-gray-700 hover:text-orange-600 hover:bg-orange-50' : 'text-white hover:bg-white/20')"
-              class="px-6 py-3 text-sm font-medium transition-all duration-300 rounded-full"
-            >
-              Products
-            </a>
-            <a
-              href="/contact.html"
-     
-              :class="currentPage === 'contact' ?
-                'bg-orange-100 text-orange-600 shadow-lg' : (scrolled ? 'text-gray-700 hover:text-orange-600 hover:bg-orange-50' : 'text-white hover:bg-white/20')"
-              class="px-6 py-3 text-sm font-medium transition-all duration-300 rounded-full"
-            >
-              Contact
-            </a>
-          </div>
-
-          <div class="md:hidden flex items-center">
-            <button
-              @click="mobileMenuOpen = !mobileMenuOpen"
-              class="p-2 rounded-xl transition-all duration-300"
-              :class="scrolled ?
-                'text-gray-700 hover:bg-gray-100' : 'text-white hover:bg-white/20'"
-            >
-              <i
-                class="ri-menu-3-line text-2xl transition-transform duration-300"
-                x-show="!mobileMenuOpen"
-              ></i>
-              <i
-       
-                class="ri-close-line text-2xl transition-transform duration-300"
-                x-show="mobileMenuOpen"
-              ></i>
-            </button>
+              KENYA LIMITED
+            </p>
           </div>
         </div>
       </div>
 
-      <div
-       
-        x-show="mobileMenuOpen"
-        x-transition:enter="transition ease-out duration-300"
-        x-transition:enter-start="opacity-0 -translate-y-4"
-        x-transition:enter-end="opacity-100 translate-y-0"
-        x-transition:leave="transition ease-in duration-200"
-        x-transition:leave-start="opacity-100 translate-y-0"
-        x-transition:leave-end="opacity-0 -translate-y-4"
-        class="md:hidden bg-white/95 backdrop-blur-xl border-t border-orange-100/50"
-      >
-        <div class="px-4 py-6 space-y-2">
-          <a
-    
-            href="/index.html"
-            class="block w-full text-left px-4 py-3 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-orange-50 rounded-xl transition-all duration-300"
-            @click="mobileMenuOpen = false"
-          >
-            Home
-          </a>
-          <a
-            
-            href="/about.html"
-            class="block w-full text-left px-4 py-3 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-orange-50 rounded-xl transition-all duration-300"
-            @click="mobileMenuOpen = false"
-          >
-            About
-          </a>
-          <a
-            href="/products.html"
-        
-            class="block w-full text-left px-4 py-3 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-orange-50 rounded-xl transition-all duration-300"
-            @click="mobileMenuOpen = false"
-          >
-            Products
-          </a>
-          <a
-            href="/contact.html"
-            class="block w-full text-left px-4 
-              py-3 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-orange-50 rounded-xl transition-all duration-300"
-            @click="mobileMenuOpen = false"
-          >
-            Contact
-          </a>
-        </div>
-      </div>
-    </nav>
-
-    <div
-      class="hero relative w-full min-h-screen 
-        flex items-center justify-center p-4 text-center overflow-hidden"
-    >
-      <img
-        src="/images/hero.jpg"
-        alt="Hero image of Mahashakti Kenya Limited transformers"
-        class="absolute inset-0 w-full h-full object-cover -z-10"
-      />
-
-      <div class="absolute inset-0 gradient-overlay z-10"></div>
-
-      <div
-       
-        class="absolute top-20 left-10 w-32 h-32 morphing-blob bg-yellow-400/20 floating blur-sm"
-      ></div>
-      <div
-        class="absolute top-1/3 right-16 w-24 h-24 morphing-blob bg-orange-400/20 floating-delayed blur-sm"
-      ></div>
-      <div
-        class="absolute bottom-32 left-1/4 w-20 h-20 morphing-blob bg-teal-400/20 floating blur-sm"
-      ></div>
-
-      <div class="relative z-20 text-white p-6 max-w-5xl mx-auto">
-    
-        <div class="slide-up" style="animation-delay: 0.3s">
-          <h1
-            class="text-4xl sm:text-5xl md:text-7xl font-bold mb-6 leading-tight"
-          >
-            Welcome to
-            <span
-              class="block bg-gradient-to-r from-yellow-300 to-orange-400 bg-clip-text text-transparent"
-            
-            >
-              Mahashakti Kenya Limited
-            </span>
-          </h1>
-        </div>
-
-        <div class="slide-up" style="animation-delay: 0.6s">
-          <p
-            class="text-lg sm:text-xl md:text-2xl font-light mb-12 max-w-3xl mx-auto leading-relaxed text-white/90"
-          >
-   
-            Established in 2016 in collaboration with Mahashakti Energy Ltd.
-            (India), we are a trusted manufacturer and repairer of transformers
-            in Kenya. From step-up and step-down to distribution, power and
-            industrial transformers, we deliver quality, innovation, and
-            reliable service.
-          </p>
-        </div>
-
-        <div
-          class="slide-up flex flex-col sm:flex-row gap-6 justify-center items-center"
-          style="animation-delay: 0.9s"
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center space-x-2">
+        <a
+          href="/index.html"
+          :class="currentPage === 'home' ? 'bg-orange-100 text-orange-600 shadow-lg' : (scrolled ? 'text-gray-700 hover:text-orange-600 hover:bg-orange-50' : 'text-white hover:bg-white/20')"
+          class="px-6 py-3 text-sm font-medium transition-all duration-300 rounded-full"
         >
-          <a
-            href="/products.html"
-            class="glow-button inline-block px-10 py-4 bg-white text-gray-900 font-semibold rounded-full hover:bg-gray-100 transform hover:scale-105 transition-all duration-300"
-   
-          >
-            <i class="ri-cpu-line mr-2"></i>
-            Our Products
-          </a>
-
-          <a
-            href="/contact.html"
-            class="inline-block px-10 py-4 border-2 border-white/50 text-white font-semibold rounded-full hover:bg-white hover:text-gray-900 backdrop-blur-sm transition-all duration-300"
-          
-          >
-            <i class="ri-mail-line mr-2"></i>
-            Get in Touch
-          </a>
-        </div>
+          Home
+        </a>
+        <a
+          href="/about.html"
+          :class="currentPage === 'about' ? 'bg-orange-100 text-orange-600 shadow-lg' : (scrolled ? 'text-gray-700 hover:text-orange-600 hover:bg-orange-50' : 'text-white hover:bg-white/20')"
+          class="px-6 py-3 text-sm font-medium transition-all duration-300 rounded-full"
+        >
+          About
+        </a>
+        <a
+          href="/products.html"
+          :class="currentPage === 'products' ? 'bg-orange-100 text-orange-600 shadow-lg' : (scrolled ? 'text-gray-700 hover:text-orange-600 hover:bg-orange-50' : 'text-white hover:bg-white/20')"
+          class="px-6 py-3 text-sm font-medium transition-all duration-300 rounded-full"
+        >
+          Products
+        </a>
+        <a
+          href="/contact.html"
+          :class="currentPage === 'contact' ? 'bg-orange-100 text-orange-600 shadow-lg' : (scrolled ? 'text-gray-700 hover:text-orange-600 hover:bg-orange-50' : 'text-white hover:bg-white/20')"
+          class="px-6 py-3 text-sm font-medium transition-all duration-300 rounded-full"
+        >
+          Contact
+        </a>
       </div>
 
-      <div
-        class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-20"
-      >
-        <div
-     
-          class="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center"
+      <!-- Mobile Menu Button -->
+      <div class="md:hidden flex items-center">
+        <button
+          @click="mobileMenuOpen = !mobileMenuOpen"
+          class="p-2 rounded-xl transition-all duration-300"
+          :class="scrolled ? 'text-gray-700 hover:bg-gray-100' : 'text-white hover:bg-white/20'"
         >
-          <div
-            class="w-1 h-3 bg-white/80 rounded-full mt-2 animate-pulse"
-          ></div>
-        </div>
+          <i
+            class="ri-menu-3-line text-2xl transition-transform duration-300"
+            x-show="!mobileMenuOpen"
+          ></i>
+          <i
+            class="ri-close-line text-2xl transition-transform duration-300"
+            x-show="mobileMenuOpen"
+          ></i>
+        </button>
       </div>
     </div>
+  </div>
+
+  <!-- Mobile Navigation -->
+  <div
+    x-show="mobileMenuOpen"
+    x-transition:enter="transition ease-out duration-300"
+    x-transition:enter-start="opacity-0 -translate-y-4"
+    x-transition:enter-end="opacity-100 translate-y-0"
+    x-transition:leave="transition ease-in duration-200"
+    x-transition:leave-start="opacity-100 translate-y-0"
+    x-transition:leave-end="opacity-0 -translate-y-4"
+    class="md:hidden bg-white/95 backdrop-blur-xl border-t border-orange-100/50"
+  >
+    <div class="px-4 py-6 space-y-2">
+      <a
+        href="/index.html"
+        class="block w-full text-left px-4 py-3 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-orange-50 rounded-xl transition-all duration-300"
+        @click="mobileMenuOpen = false"
+      >
+        Home
+      </a>
+      <a
+        href="/about.html"
+        class="block w-full text-left px-4 py-3 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-orange-50 rounded-xl transition-all duration-300"
+        @click="mobileMenuOpen = false"
+      >
+        About
+      </a>
+      <a
+        href="/products.html"
+        class="block w-full text-left px-4 py-3 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-orange-50 rounded-xl transition-all duration-300"
+        @click="mobileMenuOpen = false"
+      >
+        Products
+      </a>
+      <a
+        href="/contact.html"
+        class="block w-full text-left px-4 py-3 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-orange-50 rounded-xl transition-all duration-300"
+        @click="mobileMenuOpen = false"
+      >
+        Contact
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<div
+  class="hero relative w-full min-h-screen flex items-center justify-center p-4 text-center overflow-hidden"
+>
+  <img
+    src="/images/hero.jpg"
+    alt="Hero image of Mahashakti Kenya Limited transformers"
+    class="absolute inset-0 w-full h-full object-cover -z-10"
+  />
+
+  <!-- Enhanced Overlay with African-inspired Gradient -->
+  <div class="absolute inset-0 gradient-overlay z-10"></div>
+
+  <!-- Floating Elements with warm colors -->
+  <div
+    class="absolute top-20 left-10 w-32 h-32 morphing-blob bg-yellow-400/20 floating blur-sm"
+  ></div>
+  <div
+    class="absolute top-1/3 right-16 w-24 h-24 morphing-blob bg-orange-400/20 floating-delayed blur-sm"
+  ></div>
+  <div
+    class="absolute bottom-32 left-1/4 w-20 h-20 morphing-blob bg-teal-400/20 floating blur-sm"
+  ></div>
+
+  <!-- Main Hero Content -->
+  <div class="relative z-20 text-white p-6 max-w-5xl mx-auto">
+    <div class="slide-up" style="animation-delay: 0.3s">
+      <h1
+        class="text-4xl sm:text-5xl md:text-7xl font-bold mb-6 leading-tight"
+      >
+        Welcome to
+        <span
+          class="block bg-gradient-to-r from-yellow-300 to-orange-400 bg-clip-text text-transparent"
+        >
+          Mahashakti Kenya Limited
+        </span>
+      </h1>
+    </div>
+
+    <div class="slide-up" style="animation-delay: 0.6s">
+      <p
+        class="text-lg sm:text-xl md:text-2xl font-light mb-12 max-w-3xl mx-auto leading-relaxed text-white/90"
+      >
+        Established in 2016 in collaboration with Mahashakti Energy Ltd.
+        (India), we are a trusted manufacturer and repairer of transformers
+        in Kenya. From step-up and step-down to distribution, power and
+        industrial transformers, we deliver quality, innovation, and reliable
+        service.
+      </p>
+    </div>
+
+    <div
+      class="slide-up flex flex-col sm:flex-row gap-6 justify-center items-center"
+      style="animation-delay: 0.9s"
+    >
+      <a
+        href="/products.html"
+        class="glow-button inline-block px-10 py-4 bg-white text-gray-900 font-semibold rounded-full hover:bg-gray-100 transform hover:scale-105 transition-all duration-300"
+      >
+        <i class="ri-cpu-line mr-2"></i>
+        Our Products
+      </a>
+
+      <a
+        href="/contact.html"
+        class="inline-block px-10 py-4 border-2 border-white/50 text-white font-semibold rounded-full hover:bg-white hover:text-gray-900 backdrop-blur-sm transition-all duration-300"
+      >
+        <i class="ri-mail-line mr-2"></i>
+        Get in Touch
+      </a>
+    </div>
+  </div>
+
+  <!-- Scroll Indicator -->
+  <div
+    class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-20"
+  >
+    <div
+      class="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center"
+    >
+      <div class="w-1 h-3 bg-white/80 rounded-full mt-2 animate-pulse"></div>
+    </div>
+  </div>
+</div>
+
 
     <section 
       class="py-24 bg-white relative overflow-hidden">
