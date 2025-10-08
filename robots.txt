@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.mahashakti.co.ke/sitemap.xml
+Sitemap: https://www.mahashaktikenya.com/sitemap.xml
 
 # Disallow crawling of admin or dev folders (if any)
 # Disallow: /admin/
